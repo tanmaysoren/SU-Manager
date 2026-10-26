@@ -1,26 +1,27 @@
 # SU-Manager
 
-SU-Manager is a merged single app (`su.manager`): the AppManager fork with a full
-Shizuku manager (Shizuku-Next) built into it from source, plus the GPS & IP
-spoofer module.
+SU-Manager is a merged single app (`su.manager`): the AppManager fork (this
+repo's root project) with a full Shizuku manager (Shizuku-Next) and the GPS &
+IP spoofer built into it from source, in one Gradle build.
 
-- `AppManager-master/` — AppManager fork (app UI, app ops, tracking, rules). The
-  Gradle build embeds the two other projects via `includeBuild`.
+- Root project — the AppManager fork: app UI, app ops, tracking, rules. The two
+  embedded projects are wired in `settings.gradle` via `includeBuild`, so
+  nothing is published - everything compiles from source together.
 - `Shizuku-Next/` — Shizuku manager, integrated upstream v14.0.29-next
-  (32 upstream commits) with additional start methods: `Root (custom command)`,
-  `Via Shizuku` (starts through the running Shizuku itself - its own shell stands
-  in for the adb session), and wireless/USB/system starts.
-- `gps-&-ip-spoofer/` — GPS & IP spoofing module, also embedded the same way.
+  (32 upstream commits) plus additional start methods: `Root (custom command)`,
+  `Via Shizuku` (starts through the running Shizuku itself - its own shell
+  stands in for the adb session), and wireless/USB/system starts.
+- `gps-&-ip-spoofer/` — GPS & IP spoofing module, folded in the same way.
 
 ## Building
 
-1. Install JDK 21 and the Android SDK/NDK.
-2. Put your SDK path in `local.properties` (`sdk.dir=...`).
-3. In `Shizuku-Next/local.properties` set `shizuku.manager.applicationId` to the
-   host application id (`su.manager`) so the embedded manager matches the host.
-4. `./gradlew :app:assembleRelease` from `AppManager-master/`.
-   (Gradle wrapper files are not included in this repo; use a local Gradle that
-   matches `gradle/wrapper` versions, which are declared in the project files.)
+1. Install JDK 21 and the Android SDK/NDK; put the SDK path in `local.properties`
+   (`sdk.dir=...`).
+2. `Shizuku-Next/local.properties` pins `shizuku.manager.applicationId` to
+   `su.manager` so the embedded manager matches the host app - keep that as is.
+3. Build with Gradle (wrapper files are not in this repo; use a local Gradle
+   matching the versions in the project files):
+   `gradle :app:assembleRelease`.
 
 Release builds are signed with the public AOSP testkey (`app/testkey.p12`,
 password `testkey123`) so builds install over each other.
