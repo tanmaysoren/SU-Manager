@@ -49,6 +49,7 @@ import androidx.compose.material.icons.rounded.ExpandMore
 import androidx.compose.material.icons.rounded.MoreHoriz
 import androidx.compose.material.icons.rounded.Terminal
 import androidx.compose.material.icons.rounded.Wifi
+import androidx.compose.material.icons.rounded.WifiOff
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -682,6 +683,26 @@ fun HomeScreen(bottomPadding: Dp) {
                                     startMethod = ShizukuSettings.StartMethod.USB,
                                     reason = "home-usb"
                                 )
+                            }
+                        )
+                        // "Without Wi-Fi" used to live only in Settings' default-method list; it
+                        // is a start of its own now, so it has the same card the others do:
+                        // chosen deliberately, said, and started without the fallback sliding
+                        // a USB start into wireless or the other way round.
+                        ExpressiveCard(
+                            icon = Icons.Rounded.WifiOff,
+                            title = stringResource(R.string.home_no_network_title),
+                            body = stringResource(R.string.home_no_network_summary).stripHtmlTags(),
+                            enabled = !running,
+                            onClick = {
+                                startWithLocalNetworkPermission(ShizukuSettings.StartMethod.WIRELESS_NO_NETWORK) {
+                                    ShizukuReceiverStarter.start(
+                                        context,
+                                        userInitiated = true,
+                                        startMethod = ShizukuSettings.StartMethod.WIRELESS_NO_NETWORK,
+                                        reason = "home-no-network"
+                                    )
+                                }
                             }
                         )
                         // Starts with the running Shizuku's own shell instead of an adb

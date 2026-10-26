@@ -22,6 +22,9 @@
     <string name="home_wireless_adb_summary">Starts using wireless debugging.</string>
     <string name="home_usb_adb_title"><![CDATA[Start via USB debugging]]></string>
     <string name="home_usb_adb_summary">Starts using USB debugging.</string>
+    <!-- Home - start without a network (WIRELESS_NO_NETWORK) -->
+    <string name="home_no_network_title"><![CDATA[Start without Wi-Fi]]></string>
+    <string name="home_no_network_summary">Starts Shizuku with no Wi-Fi network: the start raises adb itself, so USB debugging under Developer options is switched on by it, wireless debugging is forced on where the device allows, and on Android 17 the classic ADB port carries the start with TCP mode switched on. Once the wireless port was paired once, this needs nothing else — no Wi-Fi, no hotspot, no pairing prompt, no computer.</string>
     <string name="home_support_body">Shizuku-Next is free and has no ads. A coffee goes towards the time it takes to maintain.</string>
     <string name="diagnostics_title">Diagnostics</string>
     <string name="diagnostics_copy">Copy diagnostics</string>
