@@ -1,6 +1,0 @@
-﻿{
-  "name": "GPS Mocker",
-  "description": "Mock system-level GPS location and IP address proxy with history tracking and diagnostic status.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
