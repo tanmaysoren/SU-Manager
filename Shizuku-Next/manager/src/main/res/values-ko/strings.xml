@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+      The source strings. Translations are written in Crowdin and arrive as a pull request; see
+      docs/translations.md. Uploading this file is also what applies its settings over there, so
+      a change here reaches translators on the next push and not before.
+    -->
+    <!-- To translators: you can leave your here -->
+    <!-- Home - Adb -->
+    <!-- Home - Wireless Adb -->
+    <string name="home_wireless_adb_title"><![CDATA[ë¬´ì„  ë””ë²„ê¹…ìœ¼ë¡œ ì‹œìž‘]]></string>
+    <string name="home_wireless_adb_starting_without_wifi">Wi-Fi ì—†ì´ ì‹œìž‘: ë¬´ì„  ë””ë²„ê¹…ì´ ì¼œì§„ ìƒíƒœë¡œ ìœ ì§€ë  ë•Œê¹Œì§€ ê¸°ê¸°ì— ê³„ì†í•´ì„œ ìš”ì²­ì„ ë³´ëƒ…ë‹ˆë‹¤. ì‹œìž‘ë˜ê±°ë‚˜ í¬ê¸°í•  ë•Œê¹Œì§€ ìµœëŒ€ 2ë¶„ì´ ê±¸ë¦´ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</string>
+    <string name="home_usb_adb_needs_network">USBë¡œ ì‹œìž‘í•˜ë©´ ê¸°ì¡´ ADB í¬íŠ¸ë¥¼ ì‚¬ìš©í•˜ë©°, ì´ í¬íŠ¸ë¥¼ ë‹¤ì‹œ ì—´ë ¤ë©´ ë„¤íŠ¸ì›Œí¬ê°€ í•„ìš”í•©ë‹ˆë‹¤. Wi-Fiì— í•œ ë²ˆ ì—°ê²°í•˜ê±°ë‚˜, ì‹œìž‘ ë°©ë²•ì„ <b>Wi-Fi ì—†ì´ ì‹œìž‘</b>ìœ¼ë¡œ ì„ íƒí•´ ë¬´ì„  ë””ë²„ê¹…ìœ¼ë¡œ ë‹¤ì‹œ ì‹œìž‘í•˜ì„¸ìš”.</string>
+    <string name="home_wireless_adb_summary">ë¬´ì„  ë””ë²„ê¹…ì„ ì‚¬ìš©í•´ ì‹œìž‘í•©ë‹ˆë‹¤.</string>
+    <string name="home_usb_adb_title"><![CDATA[USB ë””ë²„ê¹…ìœ¼ë¡œ ì‹œìž‘]]></string>
+    <string name="home_usb_adb_summary">USB ë””ë²„ê¹…ì„ ì‚¬ìš©í•´ ì‹œìž‘í•©ë‹ˆë‹¤.</string>
+    <string name="diagnostics_title">ì§„ë‹¨ ì •ë³´</string>
+    <string name="diagnostics_copy">ì§„ë‹¨ ì •ë³´ ë³µì‚¬</string>
+    <string name="diagnostics_copied">ì§„ë‹¨ ì •ë³´ê°€ ë³µì‚¬ë˜ì—ˆìŠµë‹ˆë‹¤</string>
+    <string name="diagnostics_service">ì„œë¹„ìŠ¤</string>
+    <string name="diagnostics_server_uid">ì„œë²„ uid</string>
+    <string name="diagnostics_server_api">ì„œë²„ API</string>
+    <string name="diagnostics_wireless_debugging">ë¬´ì„  ë””ë²„ê¹…</string>
+    <string name="diagnostics_adb_port">ADB í¬íŠ¸</string>
+    <string name="diagnostics_local_network">ë¡œì»¬ ë„¤íŠ¸ì›Œí¬</string>
+    <string name="diagnostics_battery">ë°°í„°ë¦¬ ìµœì í™”</string>
+    <string name="diagnostics_app">ì•±</string>
+    <string name="diagnostics_android">Android</string>
+    <string name="diagnostics_device">ê¸°ê¸°</string>
+    <string name="diagnostics_started_with">ì‹œìž‘ ë°©ë²•</string>
+    <string name="diagnostics_default">ê¸°ë³¸ ë°©ë²•</string>
+    <string name="diagnostics_granted">í—ˆìš©ë¨</string>
+    <string name="diagnostics_not_required">í•„ìš” ì—†ìŒ</string>
+    <string name="diagnostics_connected">ì—°ê²°ë¨</string>
+    <string name="diagnostics_not_connected">ì—°ê²°ë˜ì§€ ì•ŠìŒ</string>
+    <!-- The platform says "not optimized" and Samsung says "unrestricted" for the same state,
+         and "Battery optimization: not optimized" reads as a fault to anyone holding the phone.
+         "unrestricted" says what the app did and what it is: left alone. -->
+    <string name="diagnostics_battery_unrestricted">ì œí•œ ì—†ìŒ</string>
+    <string name="diagnostics_available">ì‚¬ìš© ê°€ëŠ¥</string>
+    <string name="diagnostics_unavailable">ì‚¬ìš© ë¶ˆê°€</string>
+    <string name="diagnostics_closed">ë‹«íž˜</string>
+    <!-- Adb -->
+    <string name="dialog_adb_port">í¬íŠ¸ ë²ˆí˜¸</string>
+    <string name="dialog_adb_invalid_port">í¬íŠ¸ ë²ˆí˜¸ëŠ” 1ì—ì„œ 65535 ì‚¬ì´ì˜ ì •ìˆ˜ìž…ë‹ˆë‹¤.</string>
+    <string name="adb_pairing">íŽ˜ì–´ë§</string>
+    <string name="dialog_adb_pairing_title">ê¸°ê¸°ì™€ íŽ˜ì–´ë§</string>
+    <string name="dialog_adb_pairing_discovery">íŽ˜ì–´ë§ ì„œë¹„ìŠ¤ ê²€ìƒ‰ ì¤‘</string>
+    <string name="dialog_adb_pairing_paring_code">íŽ˜ì–´ë§ ì½”ë“œ</string>
+    <string name="paring_code_is_wrong">íŽ˜ì–´ë§ ì½”ë“œê°€ ì˜¬ë°”ë¥´ì§€ ì•ŠìŠµë‹ˆë‹¤.</string>
+    <string name="cannot_connect_port">ë¬´ì„  ë””ë²„ê¹… ì„œë¹„ìŠ¤ì— ì—°ê²°í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.\n\nShizukuê°€ ëª¨ë“  ë°©í™”ë²½, ê´‘ê³  ì°¨ë‹¨, VPN ë˜ëŠ”
+        ë„¤íŠ¸ì›Œí¬ ì ‘ê·¼ ì œí•œ ê´€ë ¨ ì•±ì—ì„œ í™”ì´íŠ¸ë¦¬ìŠ¤íŠ¸ì— ë“±ë¡ë˜ì–´ ìžˆëŠ”ì§€ ê¼­ í™•ì¸í•´ ì£¼ì„¸ìš”.</string>
+    <string name="dialog_adb_pairing_message">ë‹¤ìŒ ë‹¨ê³„ë¥¼ ìˆ˜í–‰í•˜ì—¬ íŽ˜ì–´ë§ì„ ì‹œìž‘í•˜ì„¸ìš”.\n- \"ê°œë°œìž ì˜µì…˜\"ìœ¼ë¡œ ì´ë™í•©ë‹ˆë‹¤.\n-
+        \"USB ë””ë²„ê¹…\" ë° \"ë¬´ì„  ë””ë²„ê¹…\"ì„ í™œì„±í™”í•©ë‹ˆë‹¤.\n- \"ë¬´ì„  ë””ë²„ê¹…\"ì˜ ì™¼ìª½ì„ íƒ­í•©ë‹ˆë‹¤.\n- \"íŽ˜ì–´ë§ ì½”ë“œë¡œ ìž¥ì¹˜ íŽ˜ì–´ë§\"ì„ íƒ­í•©ë‹ˆë‹¤.\n-
+        ì•Œë¦¼ì— íŽ˜ì–´ë§ ì½”ë“œë¥¼ ìž…ë ¥í•©ë‹ˆë‹¤.</string>
+    <!-- Goes after dialog_adb_pairing_accessibility_enable in the same dialog: what the greyed-out
+         row means, and both ways to open it. The App info menu is the only one available on a
+         phone with no computer attached, the app-ops command is the same app-op written from
+         outside the app, and both are named because either reader may be the one holding it. -->
+    <string name="dialog_adb_pairing_open_app_info">ì•± ì •ë³´</string>
+    <string name="dialog_adb_pairing_accessibility_navigate">ë‹¤ìŒ ë‹¨ê³„ë¥¼ ìˆ˜í–‰í•˜ì—¬ íŽ˜ì–´ë§ì„ ì‹œìž‘í•˜ì„¸ìš”.\n- \"ê°œë°œìž ì˜µì…˜\"ìœ¼ë¡œ
+        ì´ë™í•©ë‹ˆë‹¤.\n- \"USB ë””ë²„ê¹…\" ë° \"ë¬´ì„  ë””ë²„ê¹…\"ì„ í™œì„±í™”í•©ë‹ˆë‹¤.\n- \"ë¬´ì„  ë””ë²„ê¹…\"ì˜ ì™¼ìª½ì„ íƒ­í•©ë‹ˆë‹¤.\n- \"íŽ˜ì–´ë§ ì½”ë“œë¡œ ê¸°ê¸° íŽ˜ì–´ë§\"ì„
+        íƒ­í•©ë‹ˆë‹¤. Shizukuê°€ ìžë™ìœ¼ë¡œ íŽ˜ì–´ë§ ì½”ë“œë¥¼ ê°ì§€í•©ë‹ˆë‹¤.</string>
+    <string name="adb_pairing_requires_multi_window">ë¨¼ì € í™”ë©´ ë¶„í•  (ë©€í‹° ìœˆë„ìš°) ëª¨ë“œë¡œ ì§„ìž…í•˜ì„¸ìš”.</string>
+    <string name="adb_pairing_requires_multi_window_reason">ì´ ì‹œìŠ¤í…œì€ íŽ˜ì–´ë§ ëŒ€í™” ëŒ€í™”ê°€ í•­ìƒ ë³´ì´ë„ë¡ ìš”êµ¬í•©ë‹ˆë‹¤. ë¶„í•  í™”ë©´
+        ëª¨ë“œë¥¼ ì‚¬ìš©í•˜ëŠ” ê²ƒë§Œì´ ì´ ì•±ê³¼ ì‹œìŠ¤í…œ ëŒ€í™” ëŒ€í™”ë¥¼ ë™ì‹œì— ë³¼ ìˆ˜ ìžˆëŠ” ë°©ë²•ìž…ë‹ˆë‹¤.</string>
+    <string name="adb_error_key_store">ë¬´ì„  ë””ë²„ê¹…ìš© í‚¤ë¥¼ ìƒì„±í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.\nì´ëŠ” ì´ ìž¥ì¹˜ì˜ KeyStore ë©”ì»¤ë‹ˆì¦˜ì´ ê³ ìž¥ ë‚¬ê¸° ë•Œë¬¸ì¼ ìˆ˜
+        ìžˆìŠµë‹ˆë‹¤.</string>
+    <string name="adb_error_stop_tcp">TCPë¥¼ í†µí•œ ADBë¥¼ ì¤‘ì§€í•˜ì§€ ëª»í–ˆìŠµë‹ˆë‹¤.</string>
+    <string name="adb_pair_required">íŽ˜ì–´ë§ ë‹¨ê³„ë¥¼ ë¨¼ì € ì§„í–‰í•˜ì„¸ìš”.</string>
+    <string name="enable">í™œì„±í™”</string>
+    <string name="auto_pair_instructions">ì½”ë“œë¥¼ ìž…ë ¥í•˜ì§€ ì•Šê³  íŽ˜ì–´ë§í•˜ê¸°:\n\n1. ê°œë°œìž ì˜µì…˜ â†’ ë¬´ì„  ë””ë²„ê¹…\n2. íŽ˜ì–´ë§ ì½”ë“œë¡œ ê¸°ê¸° íŽ˜ì–´ë§\n\nShizukuê°€ í•´ë‹¹ ëŒ€í™”ìƒìžì—ì„œ ì½”ë“œì™€ í¬íŠ¸ë¥¼ ì§ì ‘ ì½ì–´ì™€ ìŠ¤ìŠ¤ë¡œ ì‹œìž‘í•©ë‹ˆë‹¤. íŽ˜ì–´ë§ì´ ëë‚  ë•Œê¹Œì§€ ëŒ€í™”ìƒìžë¥¼ ì—´ì–´ ë‘ì„¸ìš”.</string>
+    <string name="auto_pair_manual">ìˆ˜ë™</string>
+    <string name="development_settings">ìžë™</string>
+    <string name="notification_settings">ì•Œë¦¼ ì˜µì…˜</string>
+    <string name="adb_pairing_tutorial_content_notification">Shizukuì˜ ì•Œë¦¼ì´ íŽ˜ì–´ë§ì„ ì™„ë£Œí•˜ëŠ” ë° ë„ì›€ì´ ë  ìˆ˜ë„ ìžˆìŠµë‹ˆë‹¤.</string>
+    <string name="adb_pairing_tutorial_content_steps">\"ê°œë°œìž ì˜µì…˜\"ìœ¼ë¡œ ì´ë™í•œ ë‹¤ìŒ \"USB ë””ë²„ê¹…\"ê³¼ \"ë¬´ì„  ë””ë²„ê¹…\"ì„
+        í™œì„±í™”í•©ë‹ˆë‹¤.</string>
+    <string name="adb_pairing_tutorial_content_enter_pairing_code">\"ë¬´ì„  ë””ë²„ê¹…\"ì˜ ì™¼ìª½ì„ íƒ­í•œ ë‹¤ìŒ \"íŽ˜ì–´ë§ ì½”ë“œë¡œ
+        ê¸°ê¸° íŽ˜ì–´ë§\"ì„ íƒ­í•©ë‹ˆë‹¤. ì•Œë¦¼ì— ìžˆëŠ” ì½”ë“œë¥¼ ìž…ë ¥í•˜ì—¬ íŽ˜ì–´ë§ì„ ì™„ë£Œí•©ë‹ˆë‹¤.</string>
+    <string name="adb_pairing_tutorial_content_notification_blocked">íŽ˜ì–´ë§ í”„ë¡œì„¸ìŠ¤ì—ì„œëŠ” Shizukuì˜ ì•Œë¦¼ê³¼ ìƒí˜¸
+        ìž‘ìš©í•´ì•¼ í•©ë‹ˆë‹¤. Shizukuê°€ ì•Œë¦¼ì„ ê²Œì‹œí•˜ë„ë¡ í—ˆìš©í•˜ì‹­ì‹œì˜¤.</string>
+    <string name="adb_pairing_tutorial_content_miui">MIUI ì‚¬ìš©ìžëŠ” ì‹œìŠ¤í…œ ì„¤ì •ì˜ \"ì•Œë¦¼\" - \"ì•Œë¦¼ ì°½\"ì—ì„œ ì•Œë¦¼ ìŠ¤íƒ€ì¼ì„
+        \"Android\"ë¡œ ì „í™˜í•´ì•¼ í•©ë‹ˆë‹¤.</string>
+    <string name="adb_pairing_tutorial_content_miui_2">ê·¸ë ‡ì§€ ì•Šìœ¼ë©´ ì•Œë¦¼ì—ì„œ íŽ˜ì–´ë§ ì½”ë“œë¥¼ ìž…ë ¥í•˜ì§€ ëª»í•  ìˆ˜ë„ ìžˆìŠµë‹ˆë‹¤.</string>
+    <string name="adb_pairing_tutorial_content_finish">ì‹œì¦ˆì¿ ì—ê²Œ ëŒì•„ê°€ì„œ ì‹œì¦ˆì¿ ë¥¼ ì‹œìž‘í•´.</string>
+    <string name="adb_pairing_tutorial_content_network">ì‹œì¦ˆì¿ ëŠ” ë¡œì»¬ ë„¤íŠ¸ì›Œí¬ì— ì ‘ì†í•´ì•¼ í•´. ë„¤íŠ¸ì›Œí¬ ê¶Œí•œìœ¼ë¡œ ì œì–´ë©ë‹ˆë‹¤.</string>
+    <string name="adb_pairing_tutorial_content_network_limation_not_foreground">ì¼ë¶€ ì‹œìŠ¤í…œ(ì˜ˆ: MIUI)ì€ ì•±ì´
+        í¬ê·¸ë¼ìš´ë“œ ì„œë¹„ìŠ¤ë¥¼ ì‚¬ìš©í•˜ë”ë¼ë„ ë³´ì´ì§€ ì•Šìœ¼ë©´ ë„¤íŠ¸ì›Œí¬ì— ì ‘ì†í•˜ì§€ ëª»í•˜ê²Œ í•©ë‹ˆë‹¤. í•´ë‹¹ ì‹œìŠ¤í…œì—ì„œëŠ” ì‹œì¦ˆì¿ ì˜ ë°°í„°ë¦¬ ìµœì í™” ê¸°ëŠ¥ì„ ë¹„í™œì„±í™”í•´ ì£¼ì„¸ìš”.</string>
+    <!-- Home - Root -->
+    <string name="home_root_title"><![CDATA[ì‹œìž‘ (ë£¨íŒ…ëœ ê¸°ê¸°ìš©)]]></string>
+    <string name="home_root_description"><![CDATA[Magiskë¥¼ ì‚¬ìš© ì¤‘ì´ë¼ë©´ %1$së¥¼ ì‚¬ìš©í•´ ë³´ì„¸ìš”. ë£¨íŠ¸ ì‚¬ìš©ìžì˜ ê²½ìš°, ì´ ëª…ë ¹ì€ Shizukuë¥¼ ëŒ€ì²´í•˜ê²Œ ë©ë‹ˆë‹¤. ì°¸ê³ : %2$së¥¼ ì‚¬ìš©í•˜ë ¤ë©´ ê¸°ì¡´ ì• í”Œë¦¬ì¼€ì´ì…˜ì„ ì•½ê°„ ë³€ê²½í•´ì•¼ í•©ë‹ˆë‹¤.]]></string>
+    <string name="home_root_button_start">ì‹œìž‘</string>
+    <!-- Home - Application management -->
+    <plurals name="home_app_management_authorized_apps_count">
+        <item quantity="other"><![CDATA[%dê°œ ì•± ì¸ì¦ë¨]]></item>
+    </plurals>
+    <!-- Home - Automation -->
+    <!-- Home - Stealth mode -->
+    <!-- Home - Learn more -->
+    <!-- Home - Adb permissions limited -->
+    <!-- Home - Dialogs -->
+    <string name="home_dialog_reboot_required_title">ìž¬ë¶€íŒ… í•„ìš”</string>
+    <string name="home_dialog_reboot_required_message">Shizukuê°€ ì œëŒ€ë¡œ ìž‘ë™í•˜ë ¤ë©´ ê¸°ê¸°ë¥¼ ìž¬ë¶€íŒ…í•´ì•¼ í•©ë‹ˆë‹¤. ê³„ì†í•˜ë ¤ë©´ ê¸°ê¸°ë¥¼ ìž¬ë¶€íŒ…í•˜ì„¸ìš”.</string>
+    <string name="home_dialog_duplicate_app_detected_title">ì¤‘ë³µëœ ì•± ë°œê²¬ë¨</string>
+    <string name="home_dialog_duplicate_app_detected_message">ì´ ì•±ì˜ ë‹¤ë¥¸ ë²„ì „ì´ ê¸°ê¸°ì— ì„¤ì¹˜ë˜ì–´ ìžˆìŠµë‹ˆë‹¤. ê³„ì†í•˜ë ¤ë©´ ì¤‘ë³µëœ ë²„ì „ì„ ëª¨ë‘ ì œê±°í•˜ê³  ê¸°ê¸°ë¥¼ ìž¬ë¶€íŒ…í•˜ì„¸ìš”.</string>
+    <!-- The same two states, said on the Home screen instead of in a dialog that only exits. Shizuku works either way; what is affected is what other apps find when they look Shizuku up. -->
+    <string name="home_dialog_button_exit">ì¢…ë£Œ</string>
+    <!-- Application management -->
+    <string name="app_management_dialog_adb_is_limited_title">ADBì˜ ê¶Œí•œì´ ì œí•œë¨</string>
+    <string name="app_management_dialog_adb_is_limited_message"><![CDATA[ê¸°ê¸° ì œì¡°ì‚¬ì—ì„œ ADBì˜ ê¶Œí•œì„ ì œí•œí•˜ê³  ìžˆì„ ê°€ëŠ¥ì„±ì´ ë†’ìŠµë‹ˆë‹¤.<p><b><a href="%1$s">ì´ ë¬¸ì„œ</a></b>ì— ì‹œìŠ¤í…œì— ëŒ€í•œ í•´ê²° ë°©ì•ˆì´ ìžˆì„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.]]></string>
+    <string name="app_management_toggle_all">ëª¨ë‘ ì „í™˜</string>
+    <string name="app_management_search_hint">ì•± ê²€ìƒ‰</string>
+    <string name="app_management_sort">ì •ë ¬</string>
+    <string name="apps_needs_shizuku">ì•±ì„ ë³´ë ¤ë©´ Shizukuë¥¼ ì‹œìž‘í•˜ì„¸ìš”</string>
+    <string name="apps_empty">í‘œì‹œí•  ì•±ì´ ì—†ìŠµë‹ˆë‹¤</string>
+    <string name="apps_filter_empty">ì´ í•„í„°ì— í•´ë‹¹í•˜ëŠ” ì•±ì´ ì—†ìŠµë‹ˆë‹¤</string>
+    <string name="apps_filter_all">ì „ì²´</string>
+    <string name="apps_filter_granted">í—ˆìš©ë¨</string>
+    <string name="apps_filter_revoked">ê±°ë¶€ë¨</string>
+    <string name="apps_filter_hidden">ìˆ¨ê¹€</string>
+    <string name="apps_no_match">ê²€ìƒ‰ ê²°ê³¼ì™€ ì¼ì¹˜í•˜ëŠ” ì•±ì´ ì—†ìŠµë‹ˆë‹¤</string>
+    <string name="app_management_sort_last_added">ìµœê·¼ ì¶”ê°€ìˆœ</string>
+    <string name="app_management_sort_updated">ì—…ë°ì´íŠ¸ìˆœ</string>
+    <string name="app_management_sort_alphabetical">A-Z</string>
+    <string name="tab_home">í™ˆ</string>
+    <string name="tab_apps">ì•±</string>
+    <string name="tab_shell">ì…¸</string>
+    <string name="tab_labs">ì‹¤í—˜ì‹¤</string>
+    <string name="lab_more_apps">ë” ë§Žì€ ì•±</string>
+    <string name="tab_firewall">ë°©í™”ë²½</string>
+    <string name="tab_autostart">ìžë™ ì‹œìž‘</string>
+    <string name="labs_filter_allowed">í—ˆìš©ë¨</string>
+    <string name="labs_filter_blocked">ì°¨ë‹¨ë¨</string>
+    <string name="labs_blocked_count">%1$dê°œ ì°¨ë‹¨ë¨</string>
+    <!-- Hiding: what apps can read about this device -->
+    <string name="tab_hide_developer_options">ê°œë°œìž ì˜µì…˜ ìˆ¨ê¸°ê¸°</string>
+    <string name="tab_hide_usb_debugging">USB ë””ë²„ê¹… ìˆ¨ê¸°ê¸°</string>
+    <string name="tab_hide_wireless_debugging">ë¬´ì„  ë””ë²„ê¹… ìˆ¨ê¸°ê¸°</string>
+    <string name="tab_hide_accessibility">ì ‘ê·¼ì„± ìˆ¨ê¸°ê¸°</string>
+    <string name="tab_hide_private_dns">í”„ë¼ì´ë¹— DNS ìˆ¨ê¸°ê¸°</string>
+    <string name="tab_hide_vpn">VPN ìˆ¨ê¸°ê¸°</string>
+    <string name="hiding_gate">ì‚¬ìš©í•¨</string>
+    <string name="hiding_gate_disabled">ì‚¬ìš© ì•ˆ í•¨</string>
+    <string name="hiding_filter_hidden">ìˆ¨ê¹€</string>
+    <string name="hiding_restore">ë³µêµ¬</string>
+    <string name="hiding_signal_developer_options">ê°œë°œìž ì˜µì…˜</string>
+    <string name="hiding_signal_usb_debugging">USB ë””ë²„ê¹…</string>
+    <string name="hiding_signal_wireless_debugging">ë¬´ì„  ë””ë²„ê¹…</string>
+    <string name="hiding_signal_accessibility">ì ‘ê·¼ì„± ì„œë¹„ìŠ¤</string>
+    <string name="hiding_signal_private_dns">í”„ë¼ì´ë¹— DNS</string>
+    <string name="hiding_signal_vpn">VPN</string>
+    <string name="hiding_vpn_client">ìˆ¨ê¸¸ VPN í´ë¼ì´ì–¸íŠ¸</string>
+    <string name="tab_force_dark">ë‹¤í¬ ëª¨ë“œ ê°•ì œ ì ìš©</string>
+    <string name="force_dark_gate">ë‹¤í¬ ëª¨ë“œ ê°•ì œ ì ìš©</string>
+    <string name="force_dark_gate_disabled">ë‹¤í¬ ëª¨ë“œ ê°•ì œ ì ìš©ì´ êº¼ì ¸ ìžˆìŠµë‹ˆë‹¤</string>
+    <string name="force_dark_count">%1$dê°œ ì ìš©ë¨</string>
+    <string name="force_dark_filter_forced">ì ìš©ë¨</string>
+    <string name="force_dark_filter_not">ì ìš© ì•ˆ ë¨</string>
+    <string name="force_dark_empty">ë‹¤í¬ ëª¨ë“œê°€ ê°•ì œ ì ìš©ëœ ì•±ì´ ì—†ìŠµë‹ˆë‹¤.</string>
+    <string name="force_dark_toggled">ì•±ì„ ê°•ì œë¡œ ì¢…ë£Œí–ˆìŠµë‹ˆë‹¤</string>
+    <string name="force_dark_notification_title">ë‹¤í¬ ëª¨ë“œ ê°•ì œ ì ìš©ì´ ì¼œì ¸ ìžˆìŠµë‹ˆë‹¤</string>
+    <string name="force_dark_notification_text">ë‹¤í¬ ëª¨ë“œ ê°•ì œ ì ìš© ëª©ë¡ì— ìžˆëŠ” ì•±ì´ ì—´ë ¤ ìžˆìŠµë‹ˆë‹¤</string>
+    <string name="force_dark_notification_watching">ëª©ë¡ì— ìžˆëŠ” ì•±ì´ ì—´ë¦¬ê¸¸ ê¸°ë‹¤ë¦¬ëŠ” ì¤‘</string>
+    <string name="tab_activities">ì•¡í‹°ë¹„í‹° ëŸ°ì²˜</string>
+    <string name="activities_apps_count">ì•± %1$dê°œ</string>
+    <string name="activities_count">ì•¡í‹°ë¹„í‹° %1$dê°œ</string>
+    <string name="activities_launcher">ëŸ°ì²˜</string>
+    <string name="activities_exported">ë‚´ë³´ë‚´ì§</string>
+    <string name="activities_not_exported">ë‚´ë³´ë‚´ì§€ì§€ ì•ŠìŒ</string>
+    <string name="activities_empty">ì´ ì•±ì€ ì„ ì–¸ëœ ì•¡í‹°ë¹„í‹°ê°€ ì—†ìŠµë‹ˆë‹¤.</string>
+    <string name="activities_needs_shizuku">Shizukuê°€ ì‹¤í–‰ ì¤‘ì´ ì•„ë‹™ë‹ˆë‹¤. ì•±ì´ ì™¸ë¶€ì— ê³µê°œí•˜ì§€ ì•Šì€ ì•¡í‹°ë¹„í‹°ëŠ” Shizukuë§Œ ì‹¤í–‰í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</string>
+    <string name="activities_refused">ì•¡í‹°ë¹„í‹°ë¥¼ ì‹œìž‘í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.</string>
+    <string name="activities_detail_package">íŒ¨í‚¤ì§€</string>
+    <string name="activities_detail_activity">ì•¡í‹°ë¹„í‹°</string>
+    <string name="activities_detail_state">ìƒíƒœ</string>
+    <string name="activities_open">ì—´ê¸°</string>
+    <string name="activities_copy">ë³µì‚¬</string>
+    <string name="activities_edit_as_intent">ì¸í…íŠ¸ë¡œ íŽ¸ì§‘</string>
+    <string name="activities_copied">ë³µì‚¬ë¨</string>
+    <string name="tab_intent_builder">ì¸í…íŠ¸ ë¹Œë”</string>
+    <string name="intent_uri">ì¸í…íŠ¸ URI</string>
+    <string name="intent_uri_load">í•„ë“œë¡œ ë¶ˆëŸ¬ì˜¤ê¸°</string>
+    <string name="intent_uri_invalid">ì˜¬ë°”ë¥¸ ì¸í…íŠ¸ URIê°€ ì•„ë‹™ë‹ˆë‹¤.</string>
+    <string name="intent_action">ì•¡ì…˜</string>
+    <string name="intent_data">ë°ì´í„°</string>
+    <string name="intent_type">íƒ€ìž…</string>
+    <string name="intent_component">ì»´í¬ë„ŒíŠ¸</string>
+    <string name="intent_package">íŒ¨í‚¤ì§€</string>
+    <string name="intent_categories">ì¹´í…Œê³ ë¦¬</string>
+    <string name="intent_operation_activity">ì•¡í‹°ë¹„í‹° ì‹œìž‘</string>
+    <string name="intent_operation_broadcast">ë¸Œë¡œë“œìºìŠ¤íŠ¸ ì „ì†¡</string>
+    <string name="intent_choose_activity">ì•¡í‹°ë¹„í‹° ì„ íƒ</string>
+    <string name="intent_key">í‚¤</string>
+    <string name="intent_value">ê°’</string>
+    <string name="intent_flags">í”Œëž˜ê·¸</string>
+    <string name="intent_start">ì‹œìž‘</string>
+    <string name="intent_nothing">ì¸í…íŠ¸ì— ì•¡ì…˜, ë°ì´í„°, íŒ¨í‚¤ì§€, ì»´í¬ë„ŒíŠ¸ ì¤‘ í•˜ë‚˜ë¥¼ ì§€ì •í•˜ì„¸ìš”.</string>
+    <string name="intent_refused">ì¸í…íŠ¸ë¥¼ ì‹œìž‘í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.</string>
+    <string name="intent_flag_new_document">ìƒˆ ë¬¸ì„œ</string>
+    <string name="intent_flag_no_animation">ì• ë‹ˆë©”ì´ì…˜ ì—†ìŒ</string>
+    <string name="tab_device_info">ìž¥ì¹˜ ì •ë³´</string>
+    <string name="device_battery">ë°°í„°ë¦¬</string>
+    <string name="device_status">ìƒíƒœ</string>
+    <string name="device_temperature">ì˜¨ë„</string>
+    <string name="device_voltage">ì „ì••</string>
+    <string name="device_current">ì „ë¥˜</string>
+    <string name="device_current_average">í‰ê·  ì „ë¥˜</string>
+    <string name="device_charge_counter">ì „í•˜ëŸ‰</string>
+    <string name="device_technology">ê¸°ìˆ </string>
+    <string name="device_health">ê±´ê°• ìƒíƒœ</string>
+    <string name="device_charging">ì¶©ì „ ì¤‘</string>
+    <string name="device_charged">ì¶©ì „ ì™„ë£Œ</string>
+    <string name="device_health_section">ê±´ê°• ìƒíƒœ</string>
+    <string name="device_bsoh">ë°°í„°ë¦¬ íš¨ìœ¨</string>
+    <string name="device_cycles">ì¶©ì „ ì‚¬ì´í´</string>
+    <string name="device_asoc">ì¶©ì „ ìƒíƒœ</string>
+    <string name="device_first_use">ìµœì´ˆ ì‚¬ìš©ì¼</string>
+    <string name="device_max_temp">ê¸°ë¡ëœ ìµœê³  ì˜¨ë„</string>
+    <string name="device_max_current">ìµœê³  ì „ë¥˜</string>
+    <string name="device_health_source">ì‚¼ì„±ì€ ì´ ì •ë³´ë¥¼ ë°°í„°ë¦¬ ì„œë¹„ìŠ¤ ë°ì´í„°ì— ì €ìž¥í•˜ë©°, ë°°í„°ë¦¬ ë¤í”„ì—ë„ ì¶œë ¥í•©ë‹ˆë‹¤. Android APIì—ëŠ” í¬í•¨ë˜ì§€ ì•Šì€ ì •ë³´ì´ë¯€ë¡œ ë‹¤ë¥¸ ì œì¡°ì‚¬ì˜ ê¸°ê¸°ì—ì„œëŠ” ì œê³µë˜ì§€ ì•Šì„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</string>
+    <string name="device_usage">ì‚¬ìš© ì‹œê°„</string>
+    <string name="device_screen_on">í™”ë©´ ì¼œì§ ì‹œê°„</string>
+    <string name="device_time_on_battery">ë°°í„°ë¦¬ ì‚¬ìš© ì‹œê°„</string>
+    <string name="device_screen_off">í™”ë©´ êº¼ì§ ì‹œê°„</string>
+    <string name="device_usage_note">í”Œëž«í¼ ìžì²´ê°€ ê´€ë¦¬í•˜ëŠ” ì¹´ìš´í„°ìž…ë‹ˆë‹¤. ë°°í„°ë¦¬ê°€ ì™„ì „ížˆ ì¶©ì „ë  ë•Œë§ˆë‹¤ ì´ˆê¸°í™”ë˜ë¯€ë¡œ, í•œ ì‹œê°„ ì „ì— ì¶©ì „í•œ ê¸°ê¸°ëŠ” ì—¬ê¸°ì— ëª‡ ì´ˆë¡œ í‘œì‹œë˜ê³  í•˜ë£¨ ì¢…ì¼ ì¶©ì „ê¸°ì—ì„œ ë¶„ë¦¬ë˜ì–´ ìžˆë˜ ê¸°ê¸°ëŠ” ëª‡ ì‹œê°„ìœ¼ë¡œ í‘œì‹œë©ë‹ˆë‹¤.</string>
+    <string name="device_drain">ë°°í„°ë¦¬ë¥¼ ì‚¬ìš©í•œ ê¸°ëŠ¥</string>
+    <string name="device_max_charging_current">ìµœëŒ€ ì¶©ì „ ì „ë¥˜</string>
+    <string name="device_max_charging_voltage">ìµœëŒ€ ì¶©ì „ ì „ì••</string>
+    <string name="device_capacity_rated">ì •ê²©</string>
+    <string name="device_capacity_typical">ì¼ë°˜</string>
+    <string name="device_capacity">ìš©ëŸ‰</string>
+    <string name="device_capacity_estimated">ì¶”ì •</string>
+    <string name="device_capacity_learned">ìµœê·¼ í•™ìŠµê°’</string>
+    <string name="device_capacity_range">í•™ìŠµëœ ë²”ìœ„</string>
+    <string name="device_capacity_note">í”Œëž«í¼ì€ ì„¤ê³„ ìš©ëŸ‰ì„ ì•Œë ¤ì£¼ì§€ ì•Šìœ¼ë©°, ì´ ê¸°ê¸°ëŠ” ì…¸ì—ì„œë„ ì—°ë£Œ ê²Œì´ì§€ ì ‘ê·¼ì„ ê±°ë¶€í•˜ë¯€ë¡œ ì™„ì¶© ëŒ€ë¹„ í¼ì„¼íŠ¸ë¥¼ ì •í™•ížˆ ê³„ì‚°í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤. ìœ„ ìˆ˜ì¹˜ëŠ” ì‹œìŠ¤í…œì´ í•™ìŠµí•œ ê°’ìž…ë‹ˆë‹¤.</string>
+    <string name="device_history">ê¸°ë¡</string>
+    <string name="device_history_level">ë°°í„°ë¦¬ ìž”ëŸ‰</string>
+    <string name="device_history_temperature">ì˜¨ë„</string>
+    <string name="device_system">ì‹œìŠ¤í…œ</string>
+    <string name="device_model">ëª¨ë¸</string>
+    <string name="device_android">Android</string>
+    <string name="device_kernel">ì»¤ë„</string>
+    <string name="device_abi">ì•„í‚¤í…ì²˜</string>
+    <string name="device_cores">CPU ì½”ì–´ ìˆ˜</string>
+    <string name="device_uptime">ê°€ë™ ì‹œê°„</string>
+    <string name="device_memory">ë©”ëª¨ë¦¬</string>
+    <string name="device_storage">ì €ìž¥ ê³µê°„</string>
+    <string name="device_shizuku">Shizuku</string>
+    <string name="device_server">ì„œë²„</string>
+    <string name="device_start_method">ì‹œìž‘ ë°©ë²•</string>
+    <string name="device_transport">ì „ì†¡ ë°©ì‹</string>
+    <string name="device_watchdog">ì§€í‚¤ëŠ” ê°œ</string>
+    <string name="device_app_in_front">í¬ê·¸ë¼ìš´ë“œ ì•±</string>
+    <string name="device_thermal">ì˜¨ë„</string>
+    <string name="device_load_average">ë¶€í•˜ í‰ê· </string>
+    <string name="log_filter_all">ì „ì²´</string>
+    <string name="log_save">ì €ìž¥</string>
+    <string name="log_clear">ì‚­ì œ</string>
+    <string name="log_cleared">ë¡œê·¸ ì‚­ì œë¨</string>
+    <string name="log_tab_app">ì´ ì•±</string>
+    <string name="log_capture_start">ì‹œìž‘</string>
+    <string name="log_capture_stop">ì¤‘ë‹¨</string>
+    <string name="log_capture_device">ì „ì²´ ìž¥ì¹˜</string>
+    <string name="log_capture_choose">ë…¹í™”í•  ì•±</string>
+    <string name="log_capture_choose_hint">ì•± ê²€ìƒ‰</string>
+    <string name="log_capture_jump">ìµœê·¼ í¬ëž˜ì‹œ</string>
+    <string name="log_session_delete">ì‚­ì œ</string>
+    <string name="hiding_resume">ìž¬ì‹œìž‘</string>
+    <string name="tab_settings">ì„¤ì •</string>
+    <string name="action_start">ì‹œìž‘</string>
+    <string name="catalog_filter_sort">ì •ë ¬</string>
+    <string name="catalog_filter_updated">ì—…ë°ì´íŠ¸ìˆœ</string>
+    <string name="modules_repo_retry">ìž¬ì‹œë„</string>
+    <string name="modules_sort">ì •ë ¬</string>
+    <string name="modules_action_short">ì•¡ì…˜</string>
+    <string name="modules_service_short">ì„œë¹„ìŠ¤</string>
+    <string name="intents_start">ì‹œìž‘</string>
+    <!-- Terminal -->
+    <string name="terminal_tutorial_miui">ì‚¬ìš©ìžë“¤ì€ MIUIê°€ ë‚´ë³´ë‚´ê¸° ê¸°ëŠ¥ì—ì„œ ì‚¬ìš©ë˜ëŠ” Storage Access Frameworkë¥¼
+        ì†ìƒì‹œí‚¨ë‹¤ê³  ë³´ê³ í–ˆìŠµë‹ˆë‹¤.</string>
+    <string name="terminal_tutorial_miui_2">MIUIë¥¼ ì‚¬ìš©í•˜ëŠ” ê²½ìš° Shizuku APKì˜ assets í´ë”ì—ì„œ íŒŒì¼ì„ ì¶”ì¶œí•´ì•¼ í•  ìˆ˜ë„
+        ìžˆìŠµë‹ˆë‹¤.</string>
+    <string name="terminal_tutorial_1">íŒŒì¼ì„ ìƒˆ í´ë”ë¡œ ë‚´ë³´ëƒ…ë‹ˆë‹¤.</string>
+    <string name="terminal_tutorial_1_description">%1$s ë° %2$së‘ ê°œì˜ íŒŒì¼ì´ ë‚´ë³´ë‚´ì§‘ë‹ˆë‹¤. ì„ íƒí•œ í´ë”ì— í•´ë‹¹ íŒŒì¼ì´ ì´ë¯¸ ìžˆëŠ”
+        ê²½ìš° ì‚­ì œë©ë‹ˆë‹¤.</string>
+    <string name="terminal_tutorial_2">í„°ë¯¸ë„ ì•±ì„ ì‚¬ìš©í•˜ì—¬ íŒŒì¼ì„ ê°œì¸ íŒŒì¼ ë””ë ‰í† ë¦¬ì— ë³µì‚¬í•©ë‹ˆë‹¤.</string>
+    <string name="terminal_tutorial_2_description">íŒ: í„°ë¯¸ë„ ì•±ì˜ í™ˆ ë””ë ‰í† ë¦¬(~)ê°€ ê°œì¸ íŒŒì¼ ë””ë ‰í† ë¦¬ì— ìžˆëŠ” ê²½ìš°, í•´ë‹¹ ë””ë ‰í† ë¦¬ì—
+        íŒŒì¼ì„ ë‘ë©´ ê²½ë¡œë¥¼ ì“°ì§€ ì•Šê³ ë„ %1$s ì„ ì‹¤í–‰í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.\n\nê·¸ë ‡ì§€ ì•Šì€ ê²½ìš°, í„°ë¯¸ë„ ì•±ì˜ %3$s êµ¬ì„± íŒŒì¼ì—ì„œ %2$s ì— ëŒ€í•œ ë³„ì¹­ì„ ë§Œë“¤ ìˆ˜
+        ìžˆìŠµë‹ˆë‹¤.</string>
+    <string name="terminal_tutorial_3">ë‹¤ìŒ ëª…ë ¹ìœ¼ë¡œ ì…¸ì„ ì—½ë‹ˆë‹¤.</string>
+    <!-- Stealth -->
+    <!-- Settings -->
+    <string name="settings_start_on_boot">ë¶€íŒ… ì‹œ ì‹œìž‘</string>
+    <string name="settings_watchdog">ì§€í‚¤ëŠ” ê°œ</string>
+    <string name="settings_watchdog_summary">Shizukuê°€ ì¶©ëŒí•˜ë©´ ìžë™ìœ¼ë¡œ ë‹¤ì‹œ ì‹œìž‘í•©ë‹ˆë‹¤.</string>
+    <!-- One wording for every switch that is nothing but a settings write, so they all say the
+         same thing about the permission the write needs. -->
+    <string name="settings_tcp_mode">TCP ëª¨ë“œ</string>
+    <string name="settings_tcp_mode_summary">"Shizukuê°€ Wi-Fi ì—†ì´ ìž¬ì‹œìž‘í•  ìˆ˜ ìžˆë„ë¡ í•©ë‹ˆë‹¤. (ShizukuëŠ” ìž¬ë¶€íŒ… í›„ í•œ ë²ˆ
+        ì‹œìž‘ë˜ì–´ì•¼ í•©ë‹ˆë‹¤.)"</string>
+    <string name="settings_tcp_mode_dialog_close_port">"TCP í¬íŠ¸ê°€ ì¦‰ì‹œ ë‹«íž™ë‹ˆë‹¤. TCP ëª¨ë“œë¥¼ ë‹¤ì‹œ ì¼œë ¤ë©´ Wi-Fiì— ì—°ê²°í•´ì•¼
+        í•©ë‹ˆë‹¤. ê³„ì†í•˜ì‹œê² ìŠµë‹ˆê¹Œ?"</string>
+    <string name="settings_restart_dialog_title">ìž¬ì‹œìž‘ í•„ìš”</string>
+    <string name="settings_restart_dialog_message">ì‹œì¦ˆì¿ ëŠ” ì´ ì„¤ì •ì„ ì ìš©í•˜ë ¤ë©´ ë‹¤ì‹œ ì‹œìž‘í•´ì•¼ í•©ë‹ˆë‹¤.</string>
+    <string name="settings_restart_dialog_message_wifi_required"><![CDATA[<br><br><b>ì™€ì´íŒŒì´ê°€ í•„ìˆ˜ìž…ë‹ˆë‹¤. ì‹œì¦ˆì¿ ëŠ” ê³„ì† ë‹¬ë¦¬ë©´ì„œ ì™€ì´íŒŒì´ ì—°ê²°ì´ ë  ë•Œê¹Œì§€ ê¸°ë‹¤ë ¸ë‹¤ê°€ ë°±ê·¸ë¼ìš´ë“œì—ì„œ ë‹¤ì‹œ ì‹œìž‘í•  ê²ƒì´ë‹¤.</b>]]></string>
+    <string name="settings_tcp_port">TCP í¬íŠ¸</string>
+    <string name="settings_language">ì–¸ì–´</string>
+    <string name="settings_black_night_theme">ê²€ì€ í…Œë§ˆ</string>
+    <string name="settings_black_night_theme_summary">ì–´ë‘ìš´ í…Œë§ˆê°€ ì‚¬ìš©ë  ë•Œ ê²€ì€ í…Œë§ˆë¥¼ ì‚¬ìš©</string>
+    <string name="permissions_action_settings">ì„¤ì •</string>
+    <string name="settings_help">ë•ë‹¤</string>
+    <string name="settings_report_bug">ë²„ê·¸ ì‹ ê³ </string>
+    <!--
+      A plural, not a plain string: most of the people on this wall are here for a single commit,
+      so the singular is read more often than the plural is.
+    -->
+    <!-- Which part of the project a contributor's commits touched, shown as a badge. -->
+    <string name="contributor_area_app">ì•±</string>
+    <string name="contributor_area_server">ì„œë²„</string>
+    <!--
+      A contributor's summary is composed from what the credits generator found - the areas they
+      worked in, and the languages they translated into. There is deliberately no string per
+      person: a new contributor is described the moment the generator sees them, and %1$s/%2$s are
+      filled with the area names above and with language names the platform already localises.
+    -->
+    <string name="settings_legacy_pairing">ë ˆê±°ì‹œ íŽ˜ì–´ë§</string>
+    <string name="settings_legacy_pairing_summary">ì•Œë¦¼ ëŒ€ì‹  ëŒ€í™” ìƒìžì— íŽ˜ì–´ë§ ì½”ë“œë¥¼ ìž…ë ¥í•˜ì„¸ìš”.</string>
+    <!-- Bug Report Dialog -->
+    <string name="bug_report_dialog_before_reporting">ë¨¼ì € ë‹¤ìŒ ì‚¬í•­ì„ ìˆ˜í–‰í•´ ì£¼ì‹­ì‹œì˜¤.</string>
+    <string name="bug_report_dialog_update">^1ì„ ì‚¬ìš©í•˜ê³  ìžˆëŠ”ì§€ í™•ì¸í•˜ì„¸ìš”.</string>
+    <string name="bug_report_dialog_link_update">ìµœì‹  ë²„ì „</string>
+    <string name="bug_report_dialog_wiki">^1ì„ ì½ê³  ê´€ë ¨ëœ ëª¨ë“  ë¬¸ì œ í•´ê²° ë‹¨ê³„ë¥¼ ë”°ë¥´ì‹­ì‹œì˜¤.</string>
+    <string name="bug_report_dialog_link_wiki">ìœ„í‚¤</string>
+    <string name="bug_report_dialog_issues">ë²„ê·¸ê°€ ì´ë¯¸ ë³´ê³ ë˜ì—ˆëŠ”ì§€ í™•ì¸í•˜ë ¤ë©´ ^1ì„ ëª¨ë‘ ê²€ìƒ‰í•´ ë³´ì„¸ìš”.</string>
+    <string name="bug_report_dialog_link_issues">ê¸°ì¡´ ë¬¸ì œ</string>
+    <!-- Snackbar -->
+    <string name="snackbar_battery_optimization_settings">ì´ ê¸°ëŠ¥ì„ ì‚¬ìš©í•˜ë ¤ë©´ ë°°í„°ë¦¬ ìµœì í™”ë¥¼ ë¹„í™œì„±í™”í•˜ì„¸ìš”.</string>
+    <string name="snackbar_action_fix">ê³ ì¹˜ë‹¤</string>
+    <!-- Updates -->
+    <!-- Toast -->
+    <string name="toast_pairing_timeout">ì‹œì¦ˆì¿  íŽ˜ì–´ë§ ì„œë¹„ìŠ¤ê°€ ì‹œê°„ ì´ˆê³¼ë˜ì—ˆë‹¤.</string>
+    <!-- Dark Mode Setting Override -->
+    <string name="dark_theme_off">í•­ìƒ ê°€ë³ë‹¤</string>
+    <string name="dark_theme_on">í•­ìƒ ì–´ë‘¡ë‹¤</string>
+    <!-- About -->
+    <!-- Start/Stop -->
+    <string name="start">ì‹œìž‘</string>
+    <!-- Notification -->
+    <string name="notification_channel_adb_pairing">ë¬´ì„  ë””ë²„ê¹… íŽ˜ì–´ë§</string>
+    <string name="notification_adb_pairing_input_paring_code">íŽ˜ì–´ë§ ì½”ë“œ ìž…ë ¥</string>
+    <string name="notification_adb_pairing_searching_for_service_title">íŽ˜ì–´ë§ ì„œë¹„ìŠ¤ ê²€ìƒ‰ ì¤‘</string>
+    <string name="notification_adb_pairing_service_found_title">íŽ˜ì–´ë§ ì„œë¹„ìŠ¤ë¥¼ ì°¾ì•˜ìŠµë‹ˆë‹¤</string>
+    <string name="notification_adb_pairing_stop_searching">ê²€ìƒ‰ ì¤‘ì§€</string>
+    <string name="notification_adb_pairing_working_title">íŽ˜ì–´ë§ ì§„í–‰ ì¤‘</string>
+    <string name="notification_adb_pairing_succeed_title">íŽ˜ì–´ë§ ì„±ê³µ</string>
+    <string name="notification_adb_pairing_succeed_text">ì§€ê¸ˆ Shizuku ì„œë¹„ìŠ¤ë¥¼ ì‹œìž‘í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.</string>
+    <string name="notification_adb_pairing_failed_title">íŽ˜ì–´ë§ ì‹¤íŒ¨</string>
+    <string name="notification_adb_pairing_retry">ìž¬ì‹œë„</string>
+    <!-- Permission related, appears in system permission UI -->
+    <string name="permission_label">Shizukuì— ì ‘ê·¼</string>
+    <string name="permission_description">ì•±ì´ Shizukuë¥¼ ì‚¬ìš©í•˜ë„ë¡ í—ˆìš©í•©ë‹ˆë‹¤.</string>
+    <string name="permission_warning_template"><![CDATA[<b>%1$s</b>ì„(ë¥¼) %2$sì— í—ˆìš©í•˜ì‹œê² ìŠµë‹ˆê¹Œ\?]]></string>
+    <string name="grant_dialog_button_allow_always">í•­ìƒ í—ˆìš©</string>
+    <string name="grant_dialog_button_deny">"ê±°ë¶€"</string>
+    <!-- Starter -->
+    <string name="starter">ì‹¤í–‰ê¸°</string>
+    <string name="start_with_root_failed">ë£¨íŠ¸ ê¶Œí•œì´ ë¶€ì—¬ë˜ì§€ ì•Šì•˜ê±°ë‚˜ ì´ ê¸°ê¸°ê°€ ë£¨íŒ…ë˜ì§€ ì•Šì•„ì„œ ì„œë¹„ìŠ¤ë¥¼ ì‹œìž‘í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.</string>
+    <!-- WADB Starter -->
+    <string name="wadb_notification_title">ì‹œì¦ˆì¿  ì‹œìž‘â€¦</string>
+    <string name="wadb_notification_wifi_required">ì§„í–‰í•˜ê¸° ì „ì— Wi-Fi ì—°ê²°ì„ ê¸°ë‹¤ë¦¬ëŠ” ì¤‘</string>
+    <string name="wadb_notification_retry">ìž¬ì‹œë„ ëŒ€ê¸° ì¤‘</string>
+    <string name="wadb_error_title">ë¶€íŒ… ì‹œ ì‹œìž‘ ì¤‘ ì˜¤ë¥˜ ë°œìƒ</string>
+    <string name="wadb_error_notify_dev">ê°œë°œìžì—ê²Œ ì•Œë¦¬ë ¤ë©´ íƒ­í•˜ì„¸ìš”.</string>
+    <string name="wadb_permission_error_notification_title">ê¶Œí•œ ì˜¤ë¥˜</string>
+    <string name="wadb_permission_error_notification_content">Shizukuë¥¼ ë¶€íŒ… ì‹œ ì‹œìž‘í•˜ë ¤ë©´
+        WRITE_SECURE_SETTINGS ê¶Œí•œì´ í•„ìš”í•©ë‹ˆë‹¤. íƒ­í•˜ì—¬ ê¶Œí•œì„ ë¶€ì—¬í•˜ëŠ” ë°©ë²•ì„ ì•Œì•„ë³´ì„¸ìš”.</string>
+    <!-- Shell -->
+    <string name="shell_title">ì…¸</string>
+    <!-- Watchdog -->
+    <string name="watchdog_running">ì›Œì¹˜ë…ì´ ì‹¤í–‰ ì¤‘ìž…ë‹ˆë‹¤</string>
+    <string name="watchdog_turn_off">ë„ì„¸ìš”</string>
+    <string name="watchdog_shizuku_crashed_title">ì‹œì¦ˆì¿ ëŠ” ìµœê·¼ì— ì¶”ë½í–ˆìŠµë‹ˆë‹¤</string>
+    <string name="watchdog_shizuku_crashed_text">Watchdogì´ ì„œë¹„ìŠ¤ë¥¼ ë‹¤ì‹œ ì‹œìž‘í–ˆìŠµë‹ˆë‹¤. í–¥í›„ ì¶©ëŒì„ ë°©ì§€í•˜ê¸° ìœ„í•œ ìž ìž¬ì ì¸ ìˆ˜ì •
+        ì‚¬í•­ì„ ì•Œì•„ë³´ë ¤ë©´ íƒ­í•˜ì„¸ìš”.</string>
+    <string name="watchdog_shizuku_crashed_action_turn_off_alerts">ì•Œë¦¼ ë„ê¸°</string>
+    <string name="watchdog_given_up_action_start">ì‹œìž‘</string>
+    <!-- Misc -->
+    <string name="dialog_cannot_open_browser_title">ë¸Œë¼ìš°ì €ë¥¼ ì‹¤í–‰í•  ìˆ˜ ì—†ìŒ</string>
+    <string name="toast_copied_to_clipboard">í´ë¦½ë³´ë“œì— ë³µì‚¬ë¨</string>
+    <string name="shizuku_accessibility_service_description">ì•Œë¦¼ì´ë‚˜ ë¶„í•  í™”ë©´ì„ ì‚¬ìš©í•  ìˆ˜ ì—†ëŠ” ê¸°ê¸°(ì˜ˆ: Android 14 ì´ìƒì„ ì‹¤í–‰í•˜ëŠ”
+        TV)ì— ëŒ€í•œ íŽ˜ì–´ë§ ì§€ì›ì„ ì œê³µí•©ë‹ˆë‹¤.\n\nShizukuê°€ ë¬´ì„  ë””ë²„ê¹… íŽ˜ì–´ë§ í™”ë©´ì—ì„œ íŽ˜ì–´ë§ ì½”ë“œë¥¼ ì¶”ì¶œí•  ìˆ˜ ìžˆë„ë¡ í•©ë‹ˆë‹¤. íŽ˜ì–´ë§ ì½”ë“œë¥¼ ì°¾ìœ¼ë©´
+        Shizukuê°€ ìžë™ìœ¼ë¡œ ë¹„í™œì„±í™”ë©ë‹ˆë‹¤.</string>
+    <!-- Messages for legacy -->
+    <string name="dialog_legacy_not_support_title">%1$sëŠ” ìµœì‹  Shizukuë¥¼ ì§€ì›í•˜ì§€ ì•ŠìŒ</string>
+    <string name="dialog_legacy_not_support_message"><![CDATA[êµ¬í˜• ShizukuëŠ” 2019ë…„ 3ì›”ì— ì§€ì›ì´ ì¤‘ë‹¨ë˜ì—ˆìŠµë‹ˆë‹¤. ë˜í•œ, êµ¬í˜• ShizukuëŠ” ìƒˆë¡œìš´ ì•ˆë“œë¡œì´ë“œ ì‹œìŠ¤í…œì—ì„œ ë™ìž‘í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.<p><b>%1$s</b> ê°œë°œìžì—ê²Œ ì—…ë°ì´íŠ¸ë¥¼ ë¬¸ì˜í•˜ì„¸ìš”.]]></string>
+    <string name="dialog_requesting_legacy_title">%1$sê°€ êµ¬í˜• Shizukuë¥¼ ìš”ì²­í•˜ê³  ìžˆìŒ</string>
+    <string name="dialog_requesting_legacy_message"><![CDATA[<b>%1$s</b>ê°€ ìµœì‹  Shizukuë¥¼ ì§€ì›í•˜ì§€ë§Œ, êµ¬í˜• Shizukuë¥¼ ìš”ì²­í•˜ê³  ìžˆìŠµë‹ˆë‹¤. Shizukuê°€ ì‹¤í–‰ ì¤‘ì´ì§€ ì•Šì•„ì„œ ë°œìƒí•  ìˆ˜ ìžˆìœ¼ë‹ˆ Shizuku ì•±ì—ì„œ í™•ì¸í•˜ì„¸ìš”.<p>êµ¬í˜• ShizukuëŠ” 2019ë…„ 3ì›” ë¶€í„° ì§€ì›ì´ ì¤‘ë‹¨ë˜ì—ˆìŠµë‹ˆë‹¤.]]></string>
+    <string name="dialog_requesting_legacy_button_open_shizuku">Shizuku ì—´ê¸°</string>
+    <string name="wadb_notification_attempt_now">ìž¬ì‹œë„</string>
+    <!-- Manage tab -->
+    <string name="manage_search_hint">ì•± ê²€ìƒ‰</string>
+    <string name="manage_filter_all">ì „ì²´</string>
+    <string name="manage_filter_hidden">ìˆ¨ê¹€</string>
+    <string name="permissions_action_deny">ê±°ë¶€</string>
+    <string name="manage_status_hidden">ìˆ¨ê¹€</string>
+    <!-- One app, and what it may do on the device -->
+    <string name="app_op_mode_deny">ê±°ë¶€</string>
+    <string name="app_action_enable">í•  ìˆ˜ ìžˆê²Œ í•˜ë‹¤</string>
+    <string name="app_info_updated">ì—…ë°ì´íŠ¸ìˆœ</string>
+    <string name="files_root_app_data">ë°ì´í„°</string>
+    <string name="files_sort">ì •ë ¬</string>
+    <string name="install_location_auto">ìžë™</string>
+</resources>

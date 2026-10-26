@@ -1,0 +1,56 @@
+plugins {
+    id "idea"
+    id "com.android.library" apply false
+    id "org.jetbrains.kotlin.android" apply false
+}
+
+idea.module {
+    excludeDirs += file("out")
+}
+
+subprojects { subproject ->
+    plugins.withId("com.android.base") {
+        android {
+            compileSdk = 36
+            buildToolsVersion = "37.0.0"
+            ndkVersion = "29.0.14206865"
+            defaultConfig {
+                minSdk = 24
+                targetSdk = 36
+            }
+            compileOptions {
+                sourceCompatibility = JavaVersion.VERSION_21
+                targetCompatibility = JavaVersion.VERSION_21
+            }
+        }
+    }
+}
+
+def gitCommitCount = Integer.parseInt("git rev-list --count HEAD".execute([], project.rootDir).text.trim())
+// Version is pinned v1 for the SU-Manager build of the manager; the git-based
+// count was the standalone project's scheme.
+def baseVersionName = "1.0"
+def isBeta = project.hasProperty("beta")
+
+// The package name of the app that hosts the manager.
+//
+// Standalone, that is this app: moe.shizuku.privileged.api. Embedded into another app
+// (the manager is a library module in that build), it is that app's package instead, and
+// the server, the starter and the shell all have to be told which package to talk to.
+// It is read from local.properties so the embedded build can point the whole project at
+// its host without every module having to know about it.
+def hostApplicationId = "moe.shizuku.privileged.api"
+def localPropsFile = file("local.properties")
+if (localPropsFile.canRead()) {
+    def localProps = new Properties()
+    localProps.load(new FileInputStream(localPropsFile))
+    if (localProps["shizuku.manager.applicationId"]) {
+        hostApplicationId = localProps["shizuku.manager.applicationId"]
+    }
+}
+
+ext {
+    versionCode = 1
+    versionName = baseVersionName
+    managerApplicationId = hostApplicationId
+}
