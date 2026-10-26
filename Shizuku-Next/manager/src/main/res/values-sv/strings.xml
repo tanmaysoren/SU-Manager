@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+      The source strings. Translations are written in Crowdin and arrive as a pull request; see
+      docs/translations.md. Uploading this file is also what applies its settings over there, so
+      a change here reaches translators on the next push and not before.
+    -->
+    <!-- To translators: you can leave your here -->
+    <!-- Home - Adb -->
+    <!-- Home - Wireless Adb -->
+    <string name="home_wireless_adb_title"><![CDATA[Starta via trÃ¥dlÃ¶s felsÃ¶kning]]></string>
+    <!-- The platform says "not optimized" and Samsung says "unrestricted" for the same state,
+         and "Battery optimization: not optimized" reads as a fault to anyone holding the phone.
+         "unrestricted" says what the app did and what it is: left alone. -->
+    <!-- Adb -->
+    <string name="dialog_adb_port">Hamn</string>
+    <string name="dialog_adb_invalid_port">Port Ã¤r ett heltal mellan 1 och 65535.</string>
+    <string name="adb_pairing">Parning</string>
+    <string name="dialog_adb_pairing_title">Koppla ihop med enhet</string>
+    <string name="dialog_adb_pairing_discovery">SÃ¶ker efter parkopplingstjÃ¤nst</string>
+    <string name="dialog_adb_pairing_paring_code">Parningskod</string>
+    <string name="paring_code_is_wrong">Parningskoden Ã¤r felaktig.</string>
+    <string name="cannot_connect_port">Kan inte ansluta till trÃ¥dlÃ¶s felsÃ¶kningstjÃ¤nst.\n\nSe till
+        att Shizuku Ã¤r vitlistad i alla brandvÃ¤ggar, annonsblockeringar, VPN eller liknande appar
+        som kan begrÃ¤nsa nÃ¤tverksÃ¥tkomst.</string>
+    <string name="dialog_adb_pairing_message">BÃ¶rja parkopplingen genom att utfÃ¶ra fÃ¶ljande steg:\n-
+        Navigera till \"Utvecklaralternativ\"\n- Aktivera \"USB-felsÃ¶kning\" och \"TrÃ¥dlÃ¶s
+        felsÃ¶kning\"\n- Tryck pÃ¥ vÃ¤nster sida av \"TrÃ¥dlÃ¶s felsÃ¶kning\"\n- Tryck pÃ¥ \"Para enhet med
+        parkopplingskod\"\n- Ange parkopplingskoden i aviseringen</string>
+    <!-- Goes after dialog_adb_pairing_accessibility_enable in the same dialog: what the greyed-out
+         row means, and both ways to open it. The App info menu is the only one available on a
+         phone with no computer attached, the app-ops command is the same app-op written from
+         outside the app, and both are named because either reader may be the one holding it. -->
+    <string name="dialog_adb_pairing_accessibility_navigate">BÃ¶rja parkopplingen genom att utfÃ¶ra
+        fÃ¶ljande steg:\n- Navigera till \"Utvecklaralternativ\"\n- Aktivera \"USB-felsÃ¶kning\" och
+        \"TrÃ¥dlÃ¶s felsÃ¶kning\"\n- Tryck pÃ¥ vÃ¤nster sida av \"TrÃ¥dlÃ¶s felsÃ¶kning\"\n- Tryck pÃ¥ \"Para
+        enhet med parkopplingskod\". Shizuku kommer automatiskt att upptÃ¤cka parkopplingskoden.</string>
+    <string name="adb_pairing_requires_multi_window">VÃ¤nligen aktivera delad skÃ¤rm (flera fÃ¶nster)
+        fÃ¶rst.</string>
+    <string name="adb_pairing_requires_multi_window_reason">Systemet krÃ¤ver att paraningsdialogen
+        alltid Ã¤r synlig. Att anvÃ¤nda delad skÃ¤rm Ã¤r det enda sÃ¤ttet att gÃ¶ra appen och
+        systemdialogen synliga samtidigt.</string>
+    <string name="adb_error_key_store">Kan inte generera nyckeln fÃ¶r trÃ¥dlÃ¶s felsÃ¶kning.\nDetta kan
+        bero pÃ¥ att KeyStore-mekanismen i denna enhet Ã¤r trasig.</string>
+    <string name="adb_error_stop_tcp">Misslyckades med att stoppa ADB Ã¶ver TCP</string>
+    <string name="adb_pair_required">GÃ¥ igenom parkopplingssteget fÃ¶rst.</string>
+    <string name="enable">Aktivera</string>
+    <string name="development_settings">Utvecklaralternativ</string>
+    <string name="notification_settings">Aviseringsalternativ</string>
+    <string name="adb_pairing_tutorial_content_notification">En avisering frÃ¥n Shizuku hjÃ¤lper dig
+        att slutfÃ¶ra parkopplingen.</string>
+    <string name="adb_pairing_tutorial_content_steps">Navigera till \"Utvecklaralternativ\" och
+        aktivera sedan \"USB-felsÃ¶kning\" och \"TrÃ¥dlÃ¶s felsÃ¶kning\".</string>
+    <string name="adb_pairing_tutorial_content_enter_pairing_code">Tryck pÃ¥ vÃ¤nster sida av
+        \"TrÃ¥dlÃ¶s felsÃ¶kning\" och tryck sedan pÃ¥ \"Para enhet med parningskod\". Ange koden i
+        aviseringen fÃ¶r att slutfÃ¶ra parkopplingen.</string>
+    <string name="adb_pairing_tutorial_content_notification_blocked">Parningsprocessen krÃ¤ver att du
+        interagerar med en avisering frÃ¥n Shizuku. VÃ¤nligen tillÃ¥t Shizuku att publicera
+        aviseringar.</string>
+    <string name="adb_pairing_tutorial_content_miui">MIUI-anvÃ¤ndare kan behÃ¶va byta aviseringsstil
+        till \"Android\" frÃ¥n \"Avisering\" - \"AviseringsskÃ¤rm\" i systeminstÃ¤llningarna.</string>
+    <string name="adb_pairing_tutorial_content_miui_2">Annars kan du kanske inte ange parningskoden
+        frÃ¥n notisen.</string>
+    <string name="adb_pairing_tutorial_content_finish">GÃ¥ tillbaka till Shizuku och bÃ¶rja med
+        Shizuku.</string>
+    <string name="adb_pairing_tutorial_content_network">Shizuku behÃ¶ver fÃ¥ tillgÃ¥ng till det lokala
+        nÃ¤tverket. Den styrs av nÃ¤tverksbehÃ¶righeten.</string>
+    <string name="adb_pairing_tutorial_content_network_limation_not_foreground">Vissa system (som
+        MIUI) fÃ¶rbjuder appar att komma Ã¥t nÃ¤tverket nÃ¤r de inte Ã¤r synliga, Ã¤ven om appen anvÃ¤nder
+        en fÃ¶rgrundstjÃ¤nst. VÃ¤nligen inaktivera batterioptimeringsfunktioner fÃ¶r Shizuku pÃ¥ sÃ¥dana
+        system.</string>
+    <!-- Home - Root -->
+    <string name="home_root_title"><![CDATA[Starta (fÃ¶r rootade enheter)]]></string>
+    <string name="home_root_description"><![CDATA[Om du anvÃ¤nder Magisk kan du prova %1$s. FÃ¶r root-anvÃ¤ndare kommer det sÃ¥ smÃ¥ningom att ersÃ¤tta Shizuku. Observera att befintliga applikationer behÃ¶ver Ã¤ndras lite fÃ¶r att kunna anvÃ¤nda %2$s.]]></string>
+    <!-- Home - Application management -->
+    <plurals name="home_app_management_authorized_apps_count">
+        <item quantity="one"><![CDATA[Auktoriserad %d -applikation]]></item>
+        <item quantity="other"><![CDATA[Auktoriserade %d applikationer]]></item>
+    </plurals>
+    <!-- Home - Automation -->
+    <!-- Home - Stealth mode -->
+    <!-- Home - Learn more -->
+    <!-- Home - Adb permissions limited -->
+    <!-- Home - Dialogs -->
+    <!-- The same two states, said on the Home screen instead of in a dialog that only exits. Shizuku works either way; what is affected is what other apps find when they look Shizuku up. -->
+    <!-- Application management -->
+    <string name="app_management_dialog_adb_is_limited_title">ADB:s behÃ¶righet Ã¤r begrÃ¤nsad</string>
+    <string name="app_management_dialog_adb_is_limited_message"><![CDATA[Det Ã¤r mycket mÃ¶jligt att din enhetstillverkare begrÃ¤nsar behÃ¶righeten fÃ¶r adb.<p>Det kan finnas en lÃ¶sning fÃ¶r ditt system i <b><a href=\"%1$s\">det hÃ¤r dokumentet</a></b>.]]></string>
+    <string name="app_management_toggle_all">Visa/visa alla</string>
+    <!-- Hiding: what apps can read about this device -->
+    <string name="device_watchdog">Vakthund</string>
+    <string name="modules_repo_retry">FÃ¶rsÃ¶ka igen</string>
+    <!-- Terminal -->
+    <string name="terminal_tutorial_miui">AnvÃ¤ndare har rapporterat att MIUI bryter mot Storage
+        Access Framework, som anvÃ¤nds av exportfunktionen.</string>
+    <string name="terminal_tutorial_miui_2">Om du anvÃ¤nder MIUI kan du behÃ¶va extrahera filen frÃ¥n
+        mappen \"tillgÃ¥ngar\" i Shizukus APK.</string>
+    <string name="terminal_tutorial_1">Exportera filerna till en ny mapp.</string>
+    <string name="terminal_tutorial_1_description">TvÃ¥ filer kommer att exporteras: %1$s och %2$s.
+        Om filerna redan finns i den valda mappen kommer de att raderas.</string>
+    <string name="terminal_tutorial_2">AnvÃ¤nd din terminalapp fÃ¶r att kopiera filerna till dess
+        privata filkatalog.</string>
+    <string name="terminal_tutorial_2_description">Tips: Om din terminalapps hemkatalog (~) finns i
+        katalogen fÃ¶r privata filer, kommer du att kunna kÃ¶ra %1$s utan att skriva sÃ¶kvÃ¤gen genom
+        att placera filerna dÃ¤r.\n\nAnnars kan du skapa ett alias fÃ¶r %2$s i din terminalapps
+        konfigurationsfil %3$s .</string>
+    <string name="terminal_tutorial_3">Ã–ppna ett shell med fÃ¶ljande kommando:</string>
+    <!-- Stealth -->
+    <!-- Settings -->
+    <string name="settings_start_on_boot">Starta vid uppstart</string>
+    <string name="settings_watchdog">Vakthund</string>
+    <string name="settings_watchdog_summary">Starta om Shizuku automatiskt om den kraschar</string>
+    <!-- One wording for every switch that is nothing but a settings write, so they all say the
+         same thing about the permission the write needs. -->
+    <string name="settings_tcp_mode">TCP-lÃ¤ge</string>
+    <string name="settings_tcp_mode_summary">"TillÃ¥ter att Shizuku startas om utan Wi-Fi. (Shizuku
+        mÃ¥ste ha startats en gÃ¥ng sedan omstarten)"</string>
+    <string name="settings_tcp_mode_dialog_close_port">"TCP-porten kommer att stÃ¤ngas omedelbart. Du
+        behÃ¶ver Wi-Fi fÃ¶r att aktivera TCP-lÃ¤get igen. Vill du fortsÃ¤tta?"</string>
+    <string name="settings_restart_dialog_title">Omstart krÃ¤vs</string>
+    <string name="settings_restart_dialog_message">Shizuku mÃ¥ste starta om fÃ¶r att kunna tillÃ¤mpa
+        denna instÃ¤llning.</string>
+    <string name="settings_restart_dialog_message_wifi_required"><![CDATA[<br><br><b>Wi-Fi krÃ¤vs. Shizuku fortsÃ¤tter att springa och vÃ¤ntar pÃ¥ en Wi-Fi-anslutning innan han startar om i bakgrunden.</b>]]></string>
+    <string name="settings_tcp_port">TCP-port</string>
+    <string name="settings_language">SprÃ¥k</string>
+    <string name="settings_black_night_theme">Svart natt-tema</string>
+    <string name="settings_black_night_theme_summary">AnvÃ¤nd temat \"pure black\" om nattlÃ¤ge Ã¤r
+        aktiverat</string>
+    <string name="settings_help">HjÃ¤lp</string>
+    <string name="settings_report_bug">Rapportera ett fel</string>
+    <!--
+      A plural, not a plain string: most of the people on this wall are here for a single commit,
+      so the singular is read more often than the plural is.
+    -->
+    <!-- Which part of the project a contributor's commits touched, shown as a badge. -->
+    <!--
+      A contributor's summary is composed from what the credits generator found - the areas they
+      worked in, and the languages they translated into. There is deliberately no string per
+      person: a new contributor is described the moment the generator sees them, and %1$s/%2$s are
+      filled with the area names above and with language names the platform already localises.
+    -->
+    <string name="settings_legacy_pairing">Ã„ldre parning</string>
+    <string name="settings_legacy_pairing_summary">Ange parkopplingskoden i en dialogruta istÃ¤llet
+        fÃ¶r en avisering</string>
+    <!-- Bug Report Dialog -->
+    <string name="bug_report_dialog_before_reporting">GÃ¶r fÃ¶rst fÃ¶ljande:</string>
+    <string name="bug_report_dialog_update">Kontrollera att du anvÃ¤nder ^1.</string>
+    <string name="bug_report_dialog_link_update">senaste versionen</string>
+    <string name="bug_report_dialog_wiki">LÃ¤s ^1 och fÃ¶lj alla relevanta felsÃ¶kningssteg.</string>
+    <string name="bug_report_dialog_issues">SÃ¶k igenom alla ^1 fÃ¶r att se om ditt fel redan har
+        rapporterats.</string>
+    <string name="bug_report_dialog_link_issues">befintliga problem</string>
+    <!-- Snackbar -->
+    <string name="snackbar_battery_optimization_settings">Inaktivera batterioptimering fÃ¶r att
+        anvÃ¤nda den hÃ¤r funktionen.</string>
+    <string name="snackbar_action_fix">Fixera</string>
+    <!-- Updates -->
+    <!-- Toast -->
+    <string name="toast_pairing_timeout">Shizukus parningstjÃ¤nst gick ut pÃ¥ tid.</string>
+    <!-- Dark Mode Setting Override -->
+    <string name="dark_theme_off">Alltid ljus</string>
+    <string name="dark_theme_on">Alltid mÃ¶rkt</string>
+    <!-- About -->
+    <!-- Start/Stop -->
+    <!-- Notification -->
+    <string name="notification_channel_adb_pairing">TrÃ¥dlÃ¶s felsÃ¶kningsparning</string>
+    <string name="notification_adb_pairing_input_paring_code">Ange parkopplingskoden</string>
+    <string name="notification_adb_pairing_searching_for_service_title">SÃ¶ker efter parkopplingstjÃ¤nst</string>
+    <string name="notification_adb_pairing_service_found_title">ParningstjÃ¤nst hittades</string>
+    <string name="notification_adb_pairing_stop_searching">Sluta sÃ¶ka</string>
+    <string name="notification_adb_pairing_working_title">Parning pÃ¥gÃ¥r</string>
+    <string name="notification_adb_pairing_succeed_title">Parkopplingen lyckades</string>
+    <string name="notification_adb_pairing_succeed_text">Du kan starta Shizuku-tjÃ¤nsten nu.</string>
+    <string name="notification_adb_pairing_failed_title">Parkopplingen misslyckades</string>
+    <string name="notification_adb_pairing_retry">FÃ¶rsÃ¶ka igen</string>
+    <!-- Permission related, appears in system permission UI -->
+    <string name="permission_label">komma Ã¥t Shizuku</string>
+    <string name="permission_description">TillÃ¥t appen att anvÃ¤nda Shizuku.</string>
+    <string name="permission_warning_template"><![CDATA[TillÃ¥t <b>%1$s</b> till %2$s?]]></string>
+    <string name="grant_dialog_button_allow_always">TillÃ¥t hela tiden</string>
+    <string name="grant_dialog_button_deny">"FÃ¶rneka"</string>
+    <!-- Starter -->
+    <string name="start_with_root_failed">Det gÃ¥r inte att starta tjÃ¤nsten eftersom root-behÃ¶righet
+        inte har beviljats eller sÃ¥ Ã¤r enheten inte rootad.</string>
+    <!-- WADB Starter -->
+    <string name="wadb_notification_title">Startar Shizukuâ€¦</string>
+    <string name="wadb_notification_wifi_required">VÃ¤ntar pÃ¥ Wi-Fi-anslutning innan jag fortsÃ¤tter</string>
+    <string name="wadb_notification_retry">VÃ¤ntar pÃ¥ att fÃ¶rsÃ¶ka igen</string>
+    <string name="wadb_error_title">Fel vid uppstart</string>
+    <string name="wadb_error_notify_dev">Tryck fÃ¶r att meddela utvecklaren.</string>
+    <string name="wadb_permission_error_notification_title">BehÃ¶righetsfel</string>
+    <string name="wadb_permission_error_notification_content">Shizuku behÃ¶ver WRITE_SECURE_SETTINGS
+        fÃ¶r att starta vid uppstart. Tryck fÃ¶r att lÃ¤ra dig hur du beviljar det.</string>
+    <!-- Shell -->
+    <!-- Watchdog -->
+    <string name="watchdog_running">Vakthunden kÃ¶r</string>
+    <string name="watchdog_turn_off">StÃ¤ng av</string>
+    <string name="watchdog_shizuku_crashed_title">Shizuku kraschade nyligen</string>
+    <string name="watchdog_shizuku_crashed_text">Watchdog startade om tjÃ¤nsten. Tryck fÃ¶r att lÃ¤sa
+        mer om potentiella lÃ¶sningar fÃ¶r att fÃ¶rhindra framtida krascher.</string>
+    <string name="watchdog_shizuku_crashed_action_turn_off_alerts">StÃ¤ng av varningar</string>
+    <!-- Misc -->
+    <string name="dialog_cannot_open_browser_title">Kan inte starta webblÃ¤saren</string>
+    <string name="toast_copied_to_clipboard">Kopierad till urklipp</string>
+    <string name="shizuku_accessibility_service_description">Ger parkopplingsstÃ¶d fÃ¶r enheter (t.ex.
+        TV-apparater med Android 14+) dÃ¤r aviseringar eller delad skÃ¤rm inte kan anvÃ¤ndas.\n\nGÃ¶r
+        det mÃ¶jligt fÃ¶r Shizuku att extrahera parkopplingskoden frÃ¥n den trÃ¥dlÃ¶sa felsÃ¶kningsskÃ¤rmen
+        fÃ¶r parkoppling. Den inaktiverar sig sjÃ¤lv nÃ¤r parkopplingskoden hittas.</string>
+    <!-- Messages for legacy -->
+    <string name="dialog_legacy_not_support_title">%1$s stÃ¶der inte moderna Shizuku</string>
+    <string name="dialog_legacy_not_support_message"><![CDATA[Legacy Shizuku har varit fÃ¶rÃ¥ldrad sedan mars 2019. Legacy Shizuku fungerar inte heller pÃ¥ nyare Android-system.<p>VÃ¤nligen be utvecklaren av <b>%1$s</b> att uppdatera.]]></string>
+    <string name="dialog_requesting_legacy_title">%1$s begÃ¤r Ã¤ldre Shizuku</string>
+    <string name="dialog_requesting_legacy_message"><![CDATA[<b>%1$s</b> har stÃ¶d fÃ¶r modern Shizuku, men begÃ¤r den Ã¤ldre versionen av Shizuku. Detta kan bero pÃ¥ att Shizuku inte kÃ¶rs, vÃ¤nligen kontrollera det i Shizuku-appen.<p>Den Ã¤ldre versionen av Shizuku har varit fÃ¶rÃ¥ldrad sedan mars 2019.]]></string>
+    <string name="dialog_requesting_legacy_button_open_shizuku">Ã–ppna Shizuku</string>
+    <string name="wadb_notification_attempt_now">FÃ¶rsÃ¶ka igen</string>
+    <!-- Manage tab -->
+    <string name="permissions_action_deny">FÃ¶rneka</string>
+    <!-- One app, and what it may do on the device -->
+    <string name="app_op_mode_deny">FÃ¶rneka</string>
+    <string name="app_action_enable">Aktivera</string>
+    <string name="install_location_auto">Utvecklaralternativ</string>
+</resources>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- GPS Mocker cyber palette, matching the Compose theme (ui/theme/Theme.kt). -->
+    <color name="notification">#FFFFFF</color>
+
+    <color name="app_color_light">#1E1E1E</color>
+    <color name="app_color_dark">#FAFAFA</color>
+</resources>
