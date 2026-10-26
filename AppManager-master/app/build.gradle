@@ -1,0 +1,285 @@
+// SPDX-License-Identifier: Apache-2.0 AND GPL-3.0-or-later
+
+plugins {
+    id('com.android.application')
+    id('dev.rikka.tools.refine') version "${refine_version}"
+}
+
+android {
+    namespace 'io.github.muntashirakon.AppManager'
+    compileSdk compile_sdk
+    buildToolsVersion = build_tools
+
+    defaultConfig {
+        applicationId 'su.manager'
+        minSdk min_sdk
+        targetSdk target_sdk
+        versionCode 1
+        versionName "1.0"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += [
+                        "room.schemaLocation": "$projectDir/schemas".toString(),
+                        "room.incremental"   : "true"
+                ]
+            }
+        }
+        externalNativeBuild {
+            cmake {
+                arguments "-DANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES=ON"
+            }
+        }
+        // Add build time to BuildConfig
+        buildConfigField "long", "BUILD_TIME_MILLIS", "${buildTime()}"
+    }
+
+    signingConfigs {
+        testkey {
+            // The public AOSP testkey, converted to PKCS#12. Matches the key that
+            // the on-device signer already used for the installs.
+            storeFile file('testkey.p12')
+            storePassword 'testkey123'
+            keyAlias 'amtestkey'
+            keyPassword 'testkey123'
+        }
+        debug {
+            storeFile file('dev_keystore.jks')
+            storePassword 'kJCp!Bda#PBdN2RLK%yMK@hatq&69E'
+            keyPassword 'kJCp!Bda#PBdN2RLK%yMK@hatq&69E'
+            keyAlias 'key0'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            // Signed with the AOSP testkey - the same key the installed build on the
+            // test device already carries - so it installs over it without wiping.
+            signingConfig signingConfigs.testkey
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            resValue "string", "app_name", "SU-Manager"
+        }
+        debug {
+            applicationIdSuffix '.debug'
+            versionNameSuffix '-DEBUG'
+            signingConfig signingConfigs.debug
+            resValue "string", "app_name", "SU-Manager Debug"
+        }
+    }
+    lint {
+        checkReleaseBuilds false
+        abortOnError false
+        checkDependencies true
+    }
+    compileOptions {
+        encoding "UTF-8"
+        // Flag to enable support for the new language APIs
+        coreLibraryDesugaringEnabled true
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    externalNativeBuild {
+        cmake {
+            path 'src/main/cpp/CMakeLists.txt'
+        }
+    }
+    splits {
+        abi {
+            reset()
+            include 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
+            universalApk true
+        }
+    }
+    aaptOptions {
+        noCompress 'jar', 'sh'
+    }
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+    sourceSets {
+        androidTest.assets.srcDirs += files("$projectDir/schemas".toString())
+    }
+    dependenciesInfo {
+        includeInApk false
+        includeInBundle false
+    }
+    packagingOptions {
+        jniLibs {
+            useLegacyPackaging true
+        }
+        resources {
+            excludes += ['META-INF/*.version']
+            merges += ['baksmali.properties']
+        }
+    }
+    buildFeatures {
+        aidl true
+        buildConfig true
+        // The manager that is built into the app ships its own native code, and that code
+        // is packaged through prefab. The app's own native build does not use any of it,
+        // but the packages have to be readable for the manager's libraries to be packaged.
+        prefab true
+    }
+}
+
+dependencies {
+    compileOnly project(path: ':hiddenapi')
+    coreLibraryDesugaring "com.android.tools:desugar_jdk_libs:${desugar_jdk_version}"
+
+    // Core Libraries
+    implementation project(path: ':libcore:compat')
+    implementation project(path: ':libcore:io')
+    implementation project(path: ':libcore:ui')
+    implementation project(path: ':libserver')
+    implementation project(path: ':docs')
+
+    // API
+    implementation "com.github.MuntashirAkon:unapkm-android:${unapkm_version}"
+    implementation project(path: ':libopenpgp')
+
+    // APK Editing
+    implementation "com.github.REAndroid:ARSCLib:${arsclib_version}"
+    implementation "com.github.MuntashirAkon:apksig-android:${apksig_version}"
+    implementation "com.github.MuntashirAkon:sun-security-android:${sun_security_version}"
+    implementation "org.bouncycastle:bcprov-jdk15to18:${bouncycastle_version}"
+    implementation "org.bouncycastle:bcpkix-jdk15to18:${bouncycastle_version}"
+    implementation "com.android.tools.smali:smali-baksmali:${baksmali_version}"
+    implementation "com.android.tools.smali:smali:${baksmali_version}"
+    implementation "com.github.MuntashirAkon.jadx:jadx-core:${jadx_version}"
+    // Replace SLF4J with a placeholder
+    configurations {
+        configureEach {
+            exclude group: 'org.slf4j', module: 'slf4j-api'
+        }
+    }
+    implementation "com.github.MuntashirAkon.jadx:jadx-dex-input:${jadx_version}"
+    // Replace SLF4J with a placeholder
+    configurations {
+        configureEach {
+            exclude group: 'org.slf4j', module: 'slf4j-api'
+        }
+    }
+
+    // DB
+    implementation "androidx.room:room-runtime:${room_version}"
+    annotationProcessor "androidx.room:room-compiler:${room_version}"
+
+    // FM
+    implementation "com.j256.simplemagic:simplemagic:${simplemagic_version}"
+
+    // Privileged
+    implementation "com.github.MuntashirAkon:libadb-android:${libadb_version}"
+    implementation "com.github.topjohnwu.libsu:core:${libsu_version}"
+    implementation "org.lsposed.hiddenapibypass:hiddenapibypass:${hiddenapibypass_version}"
+    implementation "dev.rikka.tools.refine:runtime:${refine_version}"
+
+    // UI
+    implementation "com.google.android.material:material:${material_version}"
+    implementation "androidx.core:core:${androidx_core_version}"
+    implementation "androidx.appcompat:appcompat:${appcompat_version}"
+    // Fix duplicate classes issue in material
+    configurations {
+        configureEach {
+            exclude group: 'androidx.lifecycle', module: 'lifecycle-viewmodel-ktx'
+        }
+    }
+    implementation "androidx.documentfile:documentfile:${documentfile_version}"
+    implementation "androidx.activity:activity:${activity_version}"
+    implementation "androidx.core:core-splashscreen:${splashscreen_version}"
+    implementation "androidx.biometric:biometric:${biometric_version}"
+    implementation "androidx.webkit:webkit:${webkit_version}"
+    implementation "io.github.Rosemoe.sora-editor:editor:${sora_editor_version}"
+    implementation "io.github.Rosemoe.sora-editor:language-textmate:${sora_editor_version}"
+    implementation "com.github.MuntashirAkon:time-duration-picker:${duration_picker}"
+
+    // Utility
+    implementation "androidx.exifinterface:exifinterface:${exif_version}"
+    implementation "com.google.code.gson:gson:${gson_version}"
+    implementation "com.github.luben:zstd-jni:${zstd_version}@aar"
+
+    // Shizuku-Next: the manager for root access, built into the app from the sources
+    // next door. The version is only a label - settings.gradle points the dependency at
+    // the project, so what is compiled in is the manager's own source tree rather than
+    // a published copy of it that could be a version behind.
+    implementation "moe.shizuku:manager:14.0.27-next"
+
+    // GPS & IP Spoofer: a mock-location and VPN tool built into the app, on the same
+    // pattern as the manager - settings.gradle points this dependency at the project
+    // next door, so the sources it compiles from are its own checkout and not a
+    // published copy that could be a version behind.
+    implementation "com.example:spoofer:1.0"
+    // Rikka's fork of appcompat carries the same classes as the real one, under the same
+    // names: having both would put androidx.appcompat.* on the class path twice, and the
+    // APK would not be built. The manager leaves the fork out already; this is here so
+    // that nothing else in the app's own dependencies brings it back.
+    configurations {
+        configureEach {
+            exclude group: 'dev.rikka.rikkax.appcompat', module: 'appcompat'
+            // The manager pulls the current-line apksig/jdk18on versions of three
+            // libraries the app already ships its own (older-name, newer-version)
+            // copies of. Keeping the app's copies is what keeps its own code whole:
+            // swapping the apksig fork for the stock one broke
+            // io.github.muntashirakon.io.fs.ApkFileSystem, which imports the fork's
+            // com.android.apksig.internal.zip and com.android.apksig.util packages,
+            // and the stock ARSCLib coordinates are what the manager itself asks
+            // for - the clash being the same classes under both.
+            exclude group: 'com.android.tools.build', module: 'apksig'
+            exclude group: 'io.github.reandroid', module: 'ARSCLib'
+            exclude group: 'org.bouncycastle', module: 'bcprov-jdk18on'
+            exclude group: 'org.bouncycastle', module: 'bcpkix-jdk18on'
+            exclude group: 'org.bouncycastle', module: 'bcutil-jdk18on'
+        }
+    }
+
+//    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.9.1'
+
+    // Espresso UI Testing
+//    androidTestImplementation "com.android.support.test.espresso:espresso-core:3.0.2"
+    // Optional if you need to detect intents.
+//    androidTestImplementation "com.android.support.test.espresso:espresso-intents:3.0.2"
+
+    // Unit Testing
+    testImplementation "junit:junit:${junit_version}"
+    testImplementation("org.robolectric:robolectric:${robolectric_version}") {
+        // Use the app's jdk15to18 provider family; mixing it with jdk18on duplicates signed classes.
+        exclude group: 'org.bouncycastle', module: 'bcprov-jdk18on'
+        exclude group: 'org.bouncycastle', module: 'bcpkix-jdk18on'
+        exclude group: 'org.bouncycastle', module: 'bcutil-jdk18on'
+    }
+}
+
+android.applicationVariants.configureEach { variant ->
+    String buildTypeCap = variant.buildType.name.capitalize()
+    tasks.named("merge${buildTypeCap}Assets").configure { mergeTask ->
+        mergeTask.dependsOn(":server:create${buildTypeCap}ServerJars")
+    }
+    tasks.matching {
+        it.name == "generate${buildTypeCap}LintReportModel" || it.name == "lintAnalyze${buildTypeCap}"
+    }.configureEach {
+        dependsOn(":server:create${buildTypeCap}ServerJars")
+    }
+}
+
+def buildTime() {
+    var commitTime = "git show --no-patch --format=%ct000".execute([], project.rootDir).text.trim()
+    if (isDigitsOnly(commitTime)) {
+        return Long.parseLong(commitTime)
+    }
+    println("Using system time as the build time.")
+    return System.currentTimeMillis()
+}
+
+static def isDigitsOnly(CharSequence str) {
+    final int len = str.length()
+    for (int cp, i = 0; i < len; i += Character.charCount(cp)) {
+        cp = Character.codePointAt(str, i)
+        if (!Character.isDigit(cp)) {
+            return false
+        }
+    }
+    return true
+}
+

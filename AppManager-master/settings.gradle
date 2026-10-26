@@ -1,0 +1,35 @@
+// SPDX-License-Identifier: Apache-2.0 AND GPL-3.0-or-later
+include ':app'
+include ':docs'
+include ':hiddenapi'
+include ':libcore:compat'
+include ':libcore:io'
+include ':libcore:ui'
+include ':libopenpgp'
+include ':libserver'
+include ':server'
+rootProject.name = "AppManager"
+gradle.ext.appManagerRoot = settingsDir
+
+// The Shizuku manager, built from source as part of this build.
+//
+// The manager is a library module in the Shizuku-Next checkout next door, and this is the
+// line that makes the two one build: the app is compiled against the manager's sources,
+// and the manager's own modules - the server, the shell, the starter - come with it. The
+// version in the app's dependency line is only a label here; the substitution below points
+// it at the project, so the two cannot drift apart.
+includeBuild("../Shizuku-Next") {
+    dependencySubstitution {
+        substitute module("moe.shizuku:manager") using project(":manager")
+    }
+}
+
+// The GPS & IP spoofer, on the same pattern as the manager above: a standalone Android
+// project checked out next door, folded into this build as a library. Nothing that is
+// published is used - the substitution line below makes what the app sees as an ordinary
+// dependency compile from that checkout's own sources, so the two cannot drift apart.
+includeBuild("../gps-&-ip-spoofer") {
+    dependencySubstitution {
+        substitute module("com.example:spoofer") using project(":app")
+    }
+}

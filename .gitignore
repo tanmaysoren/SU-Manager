@@ -1,0 +1,24 @@
+# Home-grown for the merged SU-Manager tree (sub-projects keep their own rules too)
+
+# Gradle / Android build outputs
+.gradle/
+build/
+out/
+captures/
+externalNativeBuild/
+*cxx/
+
+# IDE
+.idea/
+*.iml
+
+# [local.properties is tracked on purpose: Shizuku-Next/local.properties pins
+#  shizuku.manager.applicationId=su.manager. Only sdk.dir is machine-specific.]
+
+# Logs and dumps
+*.log
+*.hprof
+
+# OS junk
+.DS_Store
+Thumbs.db

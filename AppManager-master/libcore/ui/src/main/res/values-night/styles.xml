@@ -1,0 +1,52 @@
+<!-- SPDX-License-Identifier: GPL-3.0-or-later -->
+<resources>
+
+    <style name="AppThemeOverlay" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+
+        <!-- GPS Mocker cyber palette: pure black background, graphite surfaces and
+             white-on-black accents. Mirrors the mocker's own Compose theme (ui/theme/Color.kt)
+             so the embedded tool and the app around it read as one product. -->
+        <item name="android:colorBackground">#FF000000</item>
+        <item name="colorSurface">#FF121212</item>
+        <item name="colorOnSurface">#FFFAFAFA</item>
+        <item name="colorSurfaceVariant">#FF1E1E1E</item>
+        <item name="colorOnSurfaceVariant">#FF888888</item>
+        <item name="colorSurfaceContainerLowest">#FF000000</item>
+        <item name="colorSurfaceContainerLow">#FF121212</item>
+        <item name="colorSurfaceContainer">#FF161616</item>
+        <item name="colorSurfaceContainerHigh">#FF1A1A1A</item>
+        <item name="colorSurfaceContainerHighest">#FF1E1E1E</item>
+        <item name="colorPrimary">#FFFFFFFF</item>
+        <item name="colorOnPrimary">#FF000000</item>
+        <item name="colorPrimaryContainer">#FF1E1E1E</item>
+        <item name="colorOnPrimaryContainer">#FFFFFFFF</item>
+        <item name="colorSecondary">#FFE0E0E0</item>
+        <item name="colorOnSecondary">#FF000000</item>
+        <item name="colorSecondaryContainer">#FF1E1E1E</item>
+        <item name="colorOnSecondaryContainer">#FFE0E0E0</item>
+        <item name="colorTertiary">#FFA0A0A0</item>
+        <item name="colorOnTertiary">#FF000000</item>
+        <item name="colorTertiaryContainer">#FF1E1E1E</item>
+        <item name="colorOnTertiaryContainer">#FFA0A0A0</item>
+        <item name="colorOutline">#FF333333</item>
+        <item name="colorOutlineVariant">#FF2A2A2A</item>
+        <item name="android:colorError">#FFE53935</item>
+        <item name="colorError">#FFE53935</item>
+        <item name="colorOnError">#FF000000</item>
+        <item name="colorErrorContainer">#FF2B0E0E</item>
+        <item name="colorOnErrorContainer">#FFE53935</item>
+    </style>
+
+    <style name="AppTheme.Black" parent="AppTheme">
+        <item name="colorSurface">@android:color/black</item>
+        <item name="android:windowBackground">@android:drawable/screen_background_dark</item>
+        <item name="materialFullScreenAlertDialogTheme">@style/AppTheme.Black</item>
+    </style>
+
+    <style name="AppTheme.TransparentBackground.Black" parent="AppTheme.TransparentBackground">
+        <item name="colorSurface">@android:color/black</item>
+        <item name="materialFullScreenAlertDialogTheme">@style/AppTheme.Black</item>
+    </style>
+</resources>
