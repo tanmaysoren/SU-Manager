@@ -588,8 +588,18 @@ fun ActiveSpooferScreen(
             presetList = locations,
             onPresetSelected = { preset -> viewModel.selectPresetLocation(preset, context) },
             onCustomCoordinatesSubmitted = { lat, lng, name ->
-                viewModel.setLocationName(if (name.isBlank()) "Custom Coordinates" else name, context)
-                viewModel.setCoordinates(lat, lng, context)
+                val locationName = if (name.isBlank()) "Custom Coordinates" else name
+                val newPreset = com.example.model.PresetLocation(
+                    id = "custom_${System.currentTimeMillis()}",
+                    name = locationName,
+                    country = "Custom",
+                    flagEmoji = "📍",
+                    latitude = lat,
+                    longitude = lng,
+                    defaultIp = mockIp,
+                    description = "User-defined location"
+                )
+                viewModel.addOrUpdateLocation(newPreset, context)
             },
             onEditRequested = { loc -> editingLocation = loc },
             onDeleteRequested = { loc -> viewModel.deleteLocation(loc) },
@@ -607,14 +617,17 @@ fun ActiveSpooferScreen(
             nodesList = ipNodes,
             onPresetSelected = { node -> viewModel.selectPresetIp(node, context) },
             onCustomIpSubmitted = { ip, country, city, carrier, asnVal ->
-                viewModel.setMockIp(
+                val newIpNode = com.example.model.PresetIpNode(
                     ip = if (ip.isBlank()) "104.28.19.42" else ip,
                     country = if (country.isBlank()) "United States" else country,
                     city = if (city.isBlank()) "New York" else city,
+                    flagEmoji = "📍",
+                    latencyMs = 0,
+                    provider = "Custom",
                     carrier = if (carrier.isBlank()) "Cloudflare Inc." else carrier,
-                    asn = if (asnVal.isBlank()) "AS13335" else asnVal,
-                    context = context
+                    asn = if (asnVal.isBlank()) "AS13335" else asnVal
                 )
+                viewModel.addOrUpdateIpNode(newIpNode, context)
             },
             onEditRequested = { node -> editingIpNode = node },
             onDeleteRequested = { node -> viewModel.deleteIpNode(node) },
