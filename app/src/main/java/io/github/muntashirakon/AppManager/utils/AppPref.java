@@ -144,6 +144,7 @@ public class AppPref {
         PREF_SAVED_APK_FORMAT_STR,
         PREF_SELECTED_USERS_STR,
         PREF_SEND_NOTIFICATIONS_TO_CONNECTED_DEVICES_BOOL,
+        PREF_SERVER_STARTED_VIA_SHIZUKU_BOOL,
         PREF_SIGNATURE_SCHEMES_INT,
         PREF_SHOW_DISCLAIMER_BOOL,
 
@@ -461,6 +462,8 @@ public class AppPref {
                 return "";
             case PREF_MODE_OF_OPS_STR:
                 return Ops.MODE_AUTO;
+            case PREF_SERVER_STARTED_VIA_SHIZUKU_BOOL:
+                return false;
             case PREF_INSTALLER_DEFAULT_PKG_SOURCE_INT:
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                     // Shell default

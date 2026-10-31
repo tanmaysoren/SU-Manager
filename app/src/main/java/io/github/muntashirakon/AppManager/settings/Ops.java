@@ -258,7 +258,7 @@ public class Ops {
             return context.getString(R.string.root);
         }
         if (uid == SHELL_UID) {
-            return "ADB";
+            return sIsShizuku ? "Shizuku" : "ADB";
         }
         if (uid != Process.myUid()) {
             String uidStr = Owners.getUidOwnerMap(false).get(uid);
@@ -411,7 +411,11 @@ public class Ops {
                     // every permission check below treats this session the ADB way -
                     // but the launcher goes through Shizuku, not through adbd.
                     sIsAdb = true;
-                    if (reuseRunningAdbServer(context)) {
+                    if (reuseRunningAdbServer(context)
+                            && AppPref.getBoolean(AppPref.PrefKey.PREF_SERVER_STARTED_VIA_SHIZUKU_BOOL)) {
+                        // Only a server this app itself launched through Shizuku counts
+                        // as connected via Shizuku; anything else is restarted below
+                        // through the Shizuku launcher instead of being reused.
                         LocalServices.bindServicesIfNotAlready();
                         return checkRootOrIncompleteUsbDebuggingInAdb(context);
                     }
@@ -498,7 +502,10 @@ public class Ops {
                     LocalServices.bindServicesIfNotAlready();
                     int status = checkRootOrIncompleteUsbDebuggingInAdb(context);
                     if (status == STATUS_SUCCESS) {
-                        setMode(MODE_ADB_OVER_TCP);
+                        // Record what the session actually is: a server born from the
+                        // Shizuku launcher is Shizuku, not ADB over TCP.
+                        setMode(AppPref.getBoolean(AppPref.PrefKey.PREF_SERVER_STARTED_VIA_SHIZUKU_BOOL)
+                                ? MODE_SHIZUKU : MODE_ADB_OVER_TCP);
                         return;
                     }
                 }
@@ -524,7 +531,8 @@ public class Ops {
             }
             if (uid == SHELL_UID) {
                 if (checkRootOrIncompleteUsbDebuggingInAdb(context) == STATUS_SUCCESS) {
-                    setMode(MODE_ADB_OVER_TCP);
+                    setMode(AppPref.getBoolean(AppPref.PrefKey.PREF_SERVER_STARTED_VIA_SHIZUKU_BOOL)
+                            ? MODE_SHIZUKU : MODE_ADB_OVER_TCP);
                     return;
                 }
                 // A live shell service without the required permission is not a usable ADB session

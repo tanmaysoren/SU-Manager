@@ -37,6 +37,7 @@ import io.github.muntashirakon.AppManager.server.common.Constants;
 import io.github.muntashirakon.AppManager.server.common.DataTransmission;
 import io.github.muntashirakon.AppManager.server.common.ParcelableUtil;
 import io.github.muntashirakon.AppManager.settings.Ops;
+import io.github.muntashirakon.AppManager.utils.AppPref;
 import io.github.muntashirakon.adb.AdbPairingRequiredException;
 import io.github.muntashirakon.adb.AdbStream;
 import io.github.muntashirakon.io.IoUtils;
@@ -410,12 +411,17 @@ class LocalServerManager {
     private void startServer() throws Exception {
         // Shizuku first: it keeps the ADB flags for UID checking, but its launcher
         // speaks through the Shizuku binder, never through a raw adbd session.
+        // Whichever launcher wins records how the running server was born, so a later
+        // Shizuku-session can tell its own server from a leftover ADB one.
         if (Ops.isShizuku()) {
             useShizukuStartServer();
+            AppPref.set(AppPref.PrefKey.PREF_SERVER_STARTED_VIA_SHIZUKU_BOOL, true);
         } else if (Ops.isAdb()) {
             useAdbStartServer();
+            AppPref.set(AppPref.PrefKey.PREF_SERVER_STARTED_VIA_SHIZUKU_BOOL, false);
         } else if (Ops.isDirectRoot()) {
             useRootStartServer();
+            AppPref.set(AppPref.PrefKey.PREF_SERVER_STARTED_VIA_SHIZUKU_BOOL, false);
         } else throw new Exception("Neither root nor ADB mode is enabled.");
     }
 
