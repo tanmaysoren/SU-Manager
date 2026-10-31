@@ -118,22 +118,4 @@ public class CodeEditorWidget extends CodeEditor {
         }
     }
 
-    public DirectAccessProps getProps() {
-        try {
-            // Get the Class object of the superclass
-            Class<?> superClass = this.getClass().getSuperclass();
-
-            // Get the private field from the superclass
-            Field field = superClass.getDeclaredField("props");
-
-            // Make the field accessible
-            field.setAccessible(true);
-
-            // Read the value of the private field for this object
-            return (DirectAccessProps) field.get(this);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
 }
